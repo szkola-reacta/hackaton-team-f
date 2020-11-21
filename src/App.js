@@ -1,4 +1,4 @@
-zimport OfferList from './components/OfferList/OfferList';
+import OfferList from './components/OfferList/OfferList';
 import './App.css';
 
 import Searching from './components/Searching/Searching';
