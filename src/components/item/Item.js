@@ -4,9 +4,12 @@ export default class Item extends Component {
   state = {
     name: null,
     email: null,
-    city: null,
-    country: null,
-    adress: null,
+    address:{
+      country: null,
+      city: null,
+      street: null,
+      building: null,
+    },
     id: null,
   };
   componentDidMount() {
@@ -18,9 +21,27 @@ export default class Item extends Component {
     axios.get(itemUrl).then((response) => {
       data = response.data[0];
       console.log(data);
+      this.setState({
+        name: data.name,
+        email:data.email,
+        address:{
+          country: data.address.country,
+          city: data.address.city,
+          street: data.address.street,
+          building: data.address.building,
+        }
+      })
     });
   }
   render() {
-    return <div className="offers">test2</div>;
+    const {address} = this.state;
+    return(
+     <div className="offers">
+    <h2>{address.country}</h2>
+    <h2>{address.city}</h2>
+    <h2>{address.street}</h2>
+    <h2>{address.building}</h2>
+    </div>
+    )
   }
 }
