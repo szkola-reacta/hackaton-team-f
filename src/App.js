@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+zimport OfferList from './components/OfferList/OfferList';
 import './App.css';
 
 import Searching from './components/Searching/Searching';
@@ -11,8 +11,8 @@ function App() {
       <div>
         <Searching/>
       </div>
+    <OfferList/>
     </div>
   );
 }
-
 export default App;
