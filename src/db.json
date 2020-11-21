@@ -1,0 +1,25 @@
+{
+    "offer": [
+      {
+        "name": "Hotel Warszawa",
+        "email": "service@hotelwarszawa.com",
+        "city": "Warszawa",
+        "country": "Poland",
+        "address": "Poland, Warsaw, Zielona 20 str.",
+        "id": 1
+      },
+      {
+        "name": "OLEKSII MARCHENKO",
+        "email": "marchenkoolexiy@gmail.com",
+        "address": "UL. Jemiołowa 17A/12dcd",
+        "id": 2
+      }
+    ],
+    "users": [
+      {
+        "email": "marchenkoolexiy@gmail.com",
+        "password": "12234",
+        "id": 1
+      }
+    ]
+  }
