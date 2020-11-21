@@ -7,6 +7,14 @@
         "country": "Poland",
         "address": "Poland, Warsaw, Zielona 20 str.",
         "id": 1
+      },
+      {
+        "name": "Hotel Kraków",
+        "email": "service@hotelwarszawa.com",
+        "city": "Warszawa",
+        "country": "Poland",
+        "address": "Poland, Warsaw, Zielona 20 str.",
+        "id": 2
       }
     ],
     "users": [
