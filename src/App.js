@@ -1,5 +1,4 @@
 import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
-
 import './App.css';
 
 import Search from './views/Search';
