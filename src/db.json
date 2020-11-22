@@ -10,6 +10,17 @@
           "building":"9"
         },
         "id": 1
+      },
+      {
+        "name": "Hotel Kraków",
+        "email": "service@hotelktakow.com",
+        "address": {
+          "country": "Poland",
+          "city": "Kraków",
+          "street":"Rynek",
+          "building":"3"
+        },
+        "id": 2
       }
     ],
     "users": [
