@@ -3,6 +3,7 @@
       {
         "name": "Hotel Warszawa",
         "email": "service@hotelwarszawa.com",
+        "imageUrl":"/static/media/warsaw.a8dd2d09.jpg",
         "address": {
           "country": "Poland",
           "city": "Warszawa",
@@ -14,6 +15,7 @@
       {
         "name": "Hotel Kraków",
         "email": "service@hotelktakow.com",
+        "imageUrl":"/static/media/cracow.a72cba12.jpg",
         "address": {
           "country": "Poland",
           "city": "Kraków",

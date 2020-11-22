@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import './style.css';
 import Item from "../item/Item";
 export default class OfferList extends Component {
   state = {
@@ -23,9 +24,14 @@ export default class OfferList extends Component {
     let itemsToRender;
     if (data) {
       itemsToRender = data.map((item) => {
-        return <Item id={item.id} />;
+        return (
+          <li>
+             <Item id={item.id} />
+          </li>
+       
+        );
       });
     }
-    return <div>{itemsToRender}</div>;
+    return <ul>{itemsToRender}</ul>;
   }
 }

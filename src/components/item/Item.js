@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+import './style.css';
 import axios from "axios";
+
 export default class Item extends Component {
   state = {
     name: null,
     email: null,
+    imageUrl:null,
     address:{
       country: null,
       city: null,
@@ -24,6 +27,7 @@ export default class Item extends Component {
       this.setState({
         name: data.name,
         email:data.email,
+        imageUrl:data.imageUrl,
         address:{
           country: data.address.country,
           city: data.address.city,
@@ -34,9 +38,9 @@ export default class Item extends Component {
     });
   }
   render() {
-    const {address} = this.state;
+    const {address,imageUrl} = this.state;
     return(
-     <div className="offers">
+     <div className="offers" style ={{ backgroundImage:  `url(${(imageUrl)})`}}>
     <h2>{address.country}</h2>
     <h2>{address.city}</h2>
     <h2>{address.street}</h2>
