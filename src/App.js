@@ -9,7 +9,6 @@ import OfferList from './components/OfferList/OfferList';
 
 function App() {
   return (
-    <div>
   <BrowserRouter>
       <div className="App">
         <header className="App-header">
@@ -31,8 +30,5 @@ function App() {
       </div>
     </BrowserRouter>
   );
-  <OfferList/>
-    </div>
-  
 }
 export default App;
