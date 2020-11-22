@@ -5,7 +5,6 @@ import Search from './views/Search';
 import Contact from './views/Contact';
 import Homepage from './views/Homepage';
 import Booking from './views/Booking';
-import OfferList from './components/OfferList/OfferList';
 
 function App() {
   return (
