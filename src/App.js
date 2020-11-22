@@ -5,10 +5,12 @@ import Search from './views/Search';
 import Contact from './views/Contact';
 import Homepage from './views/Homepage';
 import Booking from './views/Booking';
+import OfferList from './components/OfferList/OfferList';
 
 function App() {
   return (
-    <BrowserRouter>
+    <div>
+  <BrowserRouter>
       <div className="App">
         <header className="App-header">
           <ul className='App-menu'>
@@ -29,5 +31,8 @@ function App() {
       </div>
     </BrowserRouter>
   );
+  <OfferList/>
+    </div>
+  
 }
 export default App;
