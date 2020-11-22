@@ -13,14 +13,14 @@ export default class Item extends Component {
     id: null,
   };
   componentDidMount() {
-    this.loadData(1);
+    
+    this.loadData(this.props.id);
   }
   loadData(id) {
     let itemUrl = `http://localhost:3001/offer?id=${id}`;
     let data;
     axios.get(itemUrl).then((response) => {
       data = response.data[0];
-      console.log(data);
       this.setState({
         name: data.name,
         email:data.email,

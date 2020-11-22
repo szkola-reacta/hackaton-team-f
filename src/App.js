@@ -4,7 +4,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-    <OfferList/>
+      <input type = "text" placeholder="szukaj..."/>
+    <OfferList />
     </div>
   );
 }

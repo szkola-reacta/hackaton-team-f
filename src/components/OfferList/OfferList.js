@@ -1,20 +1,31 @@
 import React, { Component } from "react";
-import Item from '../item/Item';
+import axios from "axios";
+import Item from "../item/Item";
 export default class OfferList extends Component {
   state = {
-    isActive: true,
-    direction: "left",
-    position: {
-      top: 500,
-      left: 200,
-    },
+    data: null,
   };
+  componentDidMount() {
+    this.loadData();
+  }
+  loadData() {
+    let itemUrl = `http://localhost:3001/offer`;
+    let data;
+    axios.get(itemUrl).then((response) => {
+      data = response.data;
+      this.setState({
+        data: data,
+      });
+    });
+  }
   render() {
-    return (
-      <div  className="offers">
-       <Item/>
-      </div>
-    );
+    const { data } = this.state;
+    let itemsToRender;
+    if (data) {
+      itemsToRender = data.map((item) => {
+        return <Item id={item.id} />;
+      });
+    }
+    return <div>{itemsToRender}</div>;
   }
 }
-
