@@ -1,7 +1,7 @@
-import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
+import React,{Component} from 'react';
+import { BrowserRouter, Switch, Route, NavLink,Redirect } from 'react-router-dom';
 import './App.css';
 import axios from "axios";
-import React,{Component} from 'react';
 import Search from './views/Search';
 import Contact from './views/Contact';
 import Homepage from './views/Homepage';
@@ -26,12 +26,16 @@ class  App extends Component {
   }
   render(){
     const {data} = this.state;
+    console.log(data) //tu
+
     return (
+      <div>
       <BrowserRouter>
+      <Redirect to='/dashboard' />
           <div className="App">
             <header className="App-header">
               <ul className='App-menu'>
-                <li className='App-menu__item'><NavLink to='/'>Start</NavLink></li>
+                <li className='App-menu__item'><NavLink to='/dashboard'>Start</NavLink></li>
                 <li className='App-menu__item'><NavLink to='search'>Search</NavLink></li>
                 <li className='App-menu__item'><NavLink to='booking'>Booking</NavLink></li>
                 <li className='App-menu__item'><NavLink to='contact'>Contact</NavLink></li>
@@ -39,7 +43,7 @@ class  App extends Component {
             </header>
             <div> 
               <Switch>
-                  <Route exact path='/'  component={()=> <Homepage data= {data}/>}/>
+                  <Route exact path='/dashboard' component={()=> <Homepage data= {data}/>}/>
                   <Route path='/contact' component={Contact}/>
                   <Route path='/search' component={Search}/>
                   <Route path='/booking' component={Booking}/>
@@ -47,6 +51,7 @@ class  App extends Component {
             </div>
           </div>
         </BrowserRouter>
+        </div>
       );
   }
 

@@ -4,6 +4,7 @@
       "name": "Hotel Warszawa",
       "email": "service@hotelwarszawa.com",
       "imageUrl": "./assets/images/warsaw.jpg",
+      "friendlyUrl":"warsaw-hotel-offer",
       "media": [],
       "address": {
         "country": "Poland",
@@ -17,6 +18,7 @@
       "name": "Hotel Kraków",
       "email": "service@hotelktakow.com",
       "imageUrl": "./assets/images/cracow.jpg",
+      "friendlyUrl":"cracow-hotel-offer",
       "media": [],
       "address": {
         "country": "Poland",
