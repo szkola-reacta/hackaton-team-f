@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import StarRatingComponent from "react-star-rating-component";
 import { NavLink } from "react-router-dom";
 import Item from "../item/Item";
-import { Fade, Zoom } from "react-reveal";
+import {Zoom } from "react-reveal";
 import Modal from "react-modal";
+import ItemModal from "../ItemModal/ItemModal";
 import "./style.css";
 
 export default class OfferList extends Component {
@@ -39,33 +39,15 @@ export default class OfferList extends Component {
     }
     return (
       <div>
-        <Fade bottom cascade>
-          <ul> {itemsToRender}</ul>
-        </Fade>
+        <ul> {itemsToRender}</ul>
         {item && (
-          <Modal isOpen={true} onRequestClose={this.closeModal}>
+          <Modal  isOpen={true} onRequestClose={this.closeModal}>
             <Zoom>
-              <div>
-                <button onClick={this.closeModal}>x</button>
-                <div classname="offer">
-                  <img src={item.imageUrl} alt={item.name} />
-                  <h1> {item.name}</h1>
-                  <StarRatingComponent
-                    name="rate1"
-                    starCount={10}
-                    value={item.rating}
-                  />
-                  <p> {item.description} </p>
-                  <span>
-                    Address : {item.address.country},{item.address.city},
-                    {item.address.street} {item.address.building}
-                  </span>
-                </div>
-              </div>
+              <ItemModal className="modal" item={item} closeModal={this.closeModal} />
             </Zoom>
           </Modal>
         )}
       </div>
     );
-  }
+  }f
 }

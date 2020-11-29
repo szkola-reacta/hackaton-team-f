@@ -1,36 +1,36 @@
 {
   "offer": [
     {
-      "name": "Hotel Warszawa",
-      "email": "service@hotelwarszawa.com",
-      "imageUrl": "./assets/images/warsaw.jpg",
-      "friendlyUrl":"warsaw-hotel-offer",
-      "startPrice":"30",
+      "name": "Meeru Island Resort & Spa",
+      "email": "info@meeru-island.com",
+      "imageUrl": "./assets/images/edvin-johansson.jpg",
+      "friendlyUrl":"meeru-island-resort-and-spa",
+      "startPrice":"80",
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      "media": [],
-      "rating":"6",
+      "media": [{
+        "imageOutside":"./assets/images/anmol-seth.jpg"
+      }],
+      "rating":"5",
       "address": {
-        "country": "Poland",
-        "city": "Warszawa",
-        "street": "Zielona",
-        "building": "9"
+        "country": "Maldives",
+        "city": "Dhiffushi",
+        "zip": "20187"
       },
       "id": 1
     },
     {
-      "name": "Hotel Kraków",
-      "email": "service@hotelktakow.com",
-      "imageUrl": "./assets/images/cracow.jpg",
+      "name": "Sun Siyam Olhuveli",
+      "email": "info@sun-siyam-olhuveli.com",
+      "imageUrl": "./assets/images/paolo-nicolello.jpg",
       "startPrice":"25",
-      "friendlyUrl":"cracow-hotel-offer",
+      "friendlyUrl":"Sun-Siyam-Olhuveli",
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       "media": [],
-      "rating":"8",
+      "rating":"5",
       "address": {
-        "country": "Poland",
-        "city": "Kraków",
-        "street": "Rynek",
-        "building": "3"
+        "country": "Maldives",
+        "city": "South Male Atoll",
+        "zip": "08400"
       },
       "id": 2
     }

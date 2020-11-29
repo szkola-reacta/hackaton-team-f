@@ -1,17 +1,24 @@
 import React, { Component } from "react";
 import StarRatingComponent from "react-star-rating-component";
-import formatCurrency from "../../utils";
+import { formatCurrency, truncate } from "../../utils";
 import "./style.css";
 
 export default class Item extends Component {
   render() {
-    const { name, rating, imageUrl, startPrice} = this.props.data;
+    const { name, description, rating, imageUrl, startPrice } = this.props.data;
+    console.log(description)
     return (
-      <div className="offers">
+      <div className="offer">
         <img src={imageUrl} alt={name} />
-        <div>
-          <h1>{name} </h1>
-          <StarRatingComponent name="rate1" starCount={10} value={rating} />
+        <div className="offer__description">
+          <span className="title">{name} </span>
+          <StarRatingComponent name="rate1" starCount={5} value={rating} />
+          <div className="shortDescription">
+            <span>Description : </span>
+            <p style={{ overflow: "hidden", textOverflow: "ellipsis" }}>
+              {truncate(`${description}`)}
+            </p>
+          </div>
           <p>{`from ${formatCurrency(startPrice)}/ per night`}</p>
         </div>
       </div>
