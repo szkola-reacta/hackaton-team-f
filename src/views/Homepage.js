@@ -1,11 +1,11 @@
 import React from 'react';
 import OfferList from '../components/OfferList/OfferList';
 
-function Homepage() {
+function Homepage({data}) {
   return (
     <>
-    <h3>New offers</h3>
-    <OfferList/>
+    <h3>New offers </h3>
+    <OfferList data= {data}/>
     </>
   )
 }
