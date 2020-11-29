@@ -25,9 +25,7 @@ class  App extends Component {
     });
   }
   render(){
-    const {data} = this.state;
-    console.log(data) //tu
-
+    const {data} = this.state
     return (
       <div>
       <BrowserRouter>
@@ -57,7 +55,3 @@ class  App extends Component {
 
 }
 export default App;
-// TODO: 
-// componentDidMount - wczytanie elementów z bd i przekazanie propsem
-// do komponentu OfferList oraz Item
-// useEffect

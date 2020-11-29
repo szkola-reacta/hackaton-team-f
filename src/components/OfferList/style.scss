@@ -1,8 +1,11 @@
-ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    li{
-        list-style-type: none;
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  li {
+    list-style-type: none;
+    a {
+      color: unset;
     }
+  }
 }
