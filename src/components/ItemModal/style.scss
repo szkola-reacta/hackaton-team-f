@@ -1,0 +1,73 @@
+@import "../../variables.scss";
+.item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 3vh 3vw;
+  &__close {
+    position: fixed;
+     top: 6vh;
+     right: 6vw;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border:none;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    transition: $transition;
+    &:hover{
+        background: $GGRed;
+        color:white;
+        border: 1px solid $GGRed;
+    }
+  }
+  &__image {
+    border-radius: 15px;
+    width: 40vw;
+  }
+  &__title {
+    color: $GGRed;
+    font-size: 2em;
+  }
+  &__price{
+    color:$Jet;
+    text-transform: uppercase;
+    color: white;
+  }
+  &__description
+  {
+    width: 70vw;
+    font-size: 1.1em;
+    color: white;
+  }
+  &__address
+  {
+    display: flex;
+    align-items: center;
+    padding: 1vh 0;
+    &--icon, &--url
+    {
+        color:white;
+    }
+  }
+  &__buttons
+  {
+    display: flex;
+    flex-direction: column;
+    a{
+        background: $MaximumYellowRed;
+        width: 150px;
+        height: 50px;
+        color:white;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: $transition;
+        &:hover{
+           background: $EagleGreen;
+        }
+    }
+  }
+}

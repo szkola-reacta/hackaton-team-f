@@ -1,7 +1,7 @@
-.offers{
-    //border: 1px solid black;
+@import '../../variables';
+.offer{
     width: 70vw;
-    height: 60vh;
+    height: 40vh;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -12,6 +12,31 @@
     img{
     max-width: 50%;
     max-height: 70%;
+    border-radius: 25px;
     }
-
+    &__description{
+        padding: 2vh 2vw;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .title{
+            font-size: 2em;
+            color:$GGRed
+        }
+        .shortDescription{
+            font-size:0.7em;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width:20vw;
+            span{
+             color: $Jet;
+             text-decoration: underline;
+             padding: 10px 0;
+            }
+            p{
+                text-align: left;
+            }
+        }
+    }
 }
