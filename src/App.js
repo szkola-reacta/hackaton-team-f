@@ -6,6 +6,7 @@ import Search from './views/Search';
 import Contact from './views/Contact';
 import Homepage from './views/Homepage';
 import Booking from './views/Booking';
+import Registration from "./views/Registration";
 
 class  App extends Component {
   state = {
@@ -37,14 +38,16 @@ class  App extends Component {
                 <li className='App-menu__item'><NavLink to='search'>Search</NavLink></li>
                 <li className='App-menu__item'><NavLink to='booking'>Booking</NavLink></li>
                 <li className='App-menu__item'><NavLink to='contact'>Contact</NavLink></li>
+                <li className='App-menu__item'><NavLink to='registration'>Registration</NavLink></li>
               </ul>
             </header>
             <div> 
               <Switch>
                   <Route exact path='/dashboard' component={()=> <Homepage data= {data}/>}/>
-                  <Route path='/contact' component={Contact}/>
+                  <Route path='/contact' component={() => <Contact/>}/>
                   <Route path='/search' component={Search}/>
                   <Route path='/booking' component={Booking}/>
+                  <Route path='/registration' component={Registration}/>
               </Switch>
             </div>
           </div>
