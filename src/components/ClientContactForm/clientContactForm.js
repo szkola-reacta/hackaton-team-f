@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 import ItemsForm from "../ItemsForm/itemsForm";
 
 export default class ClientContactForm extends React.Component {
