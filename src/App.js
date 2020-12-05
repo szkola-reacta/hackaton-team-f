@@ -37,7 +37,6 @@ class App extends Component {
       // <Fade top>
       <div>
         <BrowserRouter>
-          <Redirect to="/dashboard" />
           <div className="App">
             <div className="background"></div>
             <header className="App-header">
@@ -46,13 +45,10 @@ class App extends Component {
                   <NavLink to="/dashboard">Start</NavLink>
                 </li>
                 <li className="App-menu__item">
-                  <NavLink to="search">Search</NavLink>
+                  <NavLink to="/booking">Booking</NavLink>
                 </li>
                 <li className="App-menu__item">
-                  <NavLink to="booking">Booking</NavLink>
-                </li>
-                <li className="App-menu__item">
-                  <NavLink to="contact">Contact</NavLink>
+                  <NavLink to="/contact">Contact</NavLink>
                 </li>
               </ul>
             </header>
@@ -64,9 +60,12 @@ class App extends Component {
                   component={() => <OfferList data={data} />}
                 />
                 <Route path="/contact" component={Contact} />
-                <Route path="/search" component={Search} />
+                <Route path={['/search/:query']} component={Search} />
                 <Route path="/booking" component={Booking} />
                 <Route path="/booking" component={Booking} />
+                <Route path="*">
+                  <Redirect to='/dashboard'/>
+                </Route>
               </Switch>
             </div>
           </div>
