@@ -1,12 +1,16 @@
 import React from 'react';
-import OfferList from '../components/OfferList/OfferList';
+import {NavLink } from 'react-router-dom';
 
-function Homepage({data}) {
+function Homepage() {
   return (
-    <>
-    <h3>New offers </h3>
-    <OfferList data= {data}/>
-    </>
+    <div className="homepage">
+    <div className="pageTitle">Summer offers </div>
+    <NavLink to='/offer'>
+    <button className ="go">
+      Let's go!
+    </button>
+    </NavLink>
+    </div>
   )
 }
 

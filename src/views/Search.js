@@ -2,7 +2,7 @@ import React from 'react';
 
 function Search() {
   return (
-    <h3>Search</h3>
+    <span className="pageTitle">Search</span>
   )
 }
 
