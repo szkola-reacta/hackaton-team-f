@@ -1,0 +1,70 @@
+@import "./variables.scss";
+@import './fonts.scss';
+.App {
+  text-align: center;
+  position: relative;
+  .background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-image: url("./assets/beach.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+  }
+}
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  height: 100px;
+}
+.App-menu {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  padding: 5vh 5vw;
+}
+.App-menu__item {
+  list-style-type: none;
+  font-size: 20px;
+  padding: 15px;
+  a {
+    transition: $transition;
+    font-weight: 200;
+    &:hover,&.active {
+      color: $MetalicSeaweed;
+    }
+
+  }
+}
+.homepage {
+  display: flex;
+  flex-direction: column;
+  .go {
+    width: 10vw;
+    height: 7vh;
+    background:transparent;
+    color:white;
+    border: 1px solid white;
+    transition: $transition;
+    font-size: 1.2em;
+    font-weight: 900;
+    &:hover{
+      background: white;
+      color:$MetalicSeaweed;
+    }
+  }
+}
+.pageTitle {
+  font-weight: 400;
+  font-size: 5em;
+  color: $MaximumYellowRed;
+  color: white;
+  font-family: "Aquafina";
+  padding: 20vh 20vw;
+}

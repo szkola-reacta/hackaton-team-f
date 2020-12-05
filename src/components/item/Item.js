@@ -1,47 +1,27 @@
 import React, { Component } from "react";
-import axios from "axios";
+import StarRatingComponent from "react-star-rating-component";
+import { formatCurrency, truncate } from "../../utils";
+import "./style.css";
+
 export default class Item extends Component {
-  state = {
-    name: null,
-    email: null,
-    address:{
-      country: null,
-      city: null,
-      street: null,
-      building: null,
-    },
-    id: null,
-  };
-  componentDidMount() {
-    this.loadData(1);
-  }
-  loadData(id) {
-    let itemUrl = `http://localhost:3001/offer?id=${id}`;
-    let data;
-    axios.get(itemUrl).then((response) => {
-      data = response.data[0];
-      console.log(data);
-      this.setState({
-        name: data.name,
-        email:data.email,
-        address:{
-          country: data.address.country,
-          city: data.address.city,
-          street: data.address.street,
-          building: data.address.building,
-        }
-      })
-    });
-  }
   render() {
-    const {address} = this.state;
-    return(
-     <div className="offers">
-    <h2>{address.country}</h2>
-    <h2>{address.city}</h2>
-    <h2>{address.street}</h2>
-    <h2>{address.building}</h2>
-    </div>
-    )
+    const { name, description, rating, imageUrl, startPrice } = this.props.data;
+    console.log(description)
+    return (
+      <div className="offer">
+        <img src={imageUrl} alt={name} />
+        <div className="offer__description">
+          <span className="title">{name} </span>
+          <StarRatingComponent name="rate1" starCount={5} value={rating} />
+          <div className="shortDescription">
+            <span>Description : </span>
+            <p style={{ overflow: "hidden", textOverflow: "ellipsis" }}>
+              {truncate(`${description}`)}
+            </p>
+          </div>
+          <p>{`from ${formatCurrency(startPrice)}/ per night`}</p>
+        </div>
+      </div>
+    );
   }
 }

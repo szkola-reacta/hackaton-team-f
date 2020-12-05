@@ -1,0 +1,69 @@
+.offer {
+  width: 70vw;
+  height: 40vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1vh 1vw;
+}
+
+.offer img {
+  max-width: 50%;
+  max-height: 70%;
+  border-radius: 25px;
+}
+
+.offer__description {
+  padding: 2vh 2vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.offer__description .title {
+  font-size: 2em;
+  color: #DB3A34;
+}
+
+.offer__description .shortDescription {
+  font-size: 0.7em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 20vw;
+}
+
+.offer__description .shortDescription span {
+  color: #323031;
+  text-decoration: underline;
+  padding: 10px 0;
+}
+
+.offer__description .shortDescription p {
+  text-align: left;
+}
+/*# sourceMappingURL=style.css.map */

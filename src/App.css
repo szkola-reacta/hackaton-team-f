@@ -1,68 +1,105 @@
+@font-face {
+  font-family: 'Aquafina';
+  src: url("./aguafina-script/AguafinaScript-Regular.ttf") format("truetype");
+}
+
 .App {
   text-align: center;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App .background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: url("./assets/beach.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
 }
 
 .App-header {
-  background-color: #282c34;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  height: 100px;
 }
 
 .App-menu {
-    display: flex;
-    flex-direction: row;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: fixed;
+  padding: 5vh 5vw;
 }
+
 .App-menu__item {
-    list-style-type: none;
-    font-size: 20px;
-    padding: 15px;
-    color: #fff;
+  list-style-type: none;
+  font-size: 20px;
+  padding: 15px;
 }
-.App-menu__item a:visited, a:active, a:link {
-    color: inherit;
-    text-decoration: none;
+
+.App-menu__item a {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-weight: 200;
 }
-.theme-bg {
-    background: #282c34;
-    color: #fff;
+
+.App-menu__item a:hover, .App-menu__item a.active {
+  color: #177E89;
 }
-.MuiContainer-root {
-    padding: 50px 25px;
+
+.homepage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
-.MuiFormControl-root {
-    margin: 5px !important;
-    padding: 5px !important;
+
+.homepage .go {
+  width: 10vw;
+  height: 7vh;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 1.2em;
+  font-weight: 900;
 }
-.title {
-    text-transform: uppercase;
+
+.homepage .go:hover {
+  background: white;
+  color: #177E89;
 }
-.bolder {
-    font-weight: 700;
+
+.pageTitle {
+  font-weight: 400;
+  font-size: 5em;
+  color: #f6a80a;
+  color: white;
+  font-family: "Aquafina";
+  padding: 20vh 20vw;
 }
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/*# sourceMappingURL=App.css.map */

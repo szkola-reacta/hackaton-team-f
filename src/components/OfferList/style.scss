@@ -1,0 +1,19 @@
+@import '../../variables.scss';
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  li {
+    list-style-type: none;
+    a {
+      color: unset;
+    }
+  }
+
+}
+.mainImage{
+  width:50vw;
+}
+.ReactModal__Content{
+  background: $EagleGreen-50percent!important;
+}
