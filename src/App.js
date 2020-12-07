@@ -13,6 +13,7 @@ import Contact from "./views/Contact";
 import Homepage from "./views/Homepage";
 import Booking from "./views/Booking";
 import OfferList from "./components/OfferList/OfferList";
+import HomeSelect from "./views/HomeSelect";
 
 class App extends Component {
   state = {
@@ -37,7 +38,7 @@ class App extends Component {
       // <Fade top>
       <div>
         <BrowserRouter>
-          <Redirect to="/dashboard" />
+          <Redirect to="/home" />
           <div className="App">
             <div className="background"></div>
             <header className="App-header">
@@ -63,6 +64,7 @@ class App extends Component {
                   path="/offer"
                   component={() => <OfferList data={data} />}
                 />
+                <Route path="/home" component={HomeSelect} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/search" component={Search} />
                 <Route path="/booking" component={Booking} />

@@ -102,4 +102,19 @@
   font-family: "Aquafina";
   padding: 20vh 20vw;
 }
+.homeSelect {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+.homeSelect__box {
+  height: 100vh;
+  background-image: url("./assets/beach.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.homeSelect__box--winter {
+  background-image: url("./assets/winter.jpg");
+}
 /*# sourceMappingURL=App.css.map */
