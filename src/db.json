@@ -7,9 +7,14 @@
       "friendlyUrl":"meeru-island-resort-and-spa",
       "startPrice":"80",
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      "media": [{
-        "imageOutside":"./assets/images/anmol-seth.jpg"
-      }],
+      "media": [
+          {
+            "id": 1,
+            "type": "image",
+            "source": "/assets/images/edvin-johansson.jpg",
+            "description": "Lorem ipsum 1"
+          }
+      ],
       "rating":"5",
       "address": {
         "country": "Maldives",
@@ -41,7 +46,33 @@
         "startPrice":"15",
         "friendlyUrl":"moi-than-resort-hotel",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-        "media": [],
+        "media": [
+            {
+                "id": 1,
+                "type": "image",
+                "source": "http://lorempixel.com/800/400/nature",
+                "description": "Lorem ipsum 1"
+            },
+            {
+                "id": 2,
+                "type": "image",
+                "source": "http://lorempixel.com/800/400/nature/3",
+                "description": "Lorem ipsum 2"
+            },
+            {
+                "id": 3,
+                "type": "video",
+                "source": "https://www.youtube.com/embed/tb3HXbVEnA0",
+                "description": "Lorem ipsum 3"
+            },
+            {
+                
+                "id": 4,
+                "type": "video",
+                "source": "https://www.youtube.com/embed/a8r6yHdEE28",
+                "description": "Lorem ipsum 4"
+            }
+        ],
         "rating":"4",
         "address": {
           "country": "Brasil",
@@ -53,11 +84,18 @@
       {
         "name": "Impact Star",
         "email": "info@sun-siyam-olhuveli.com",
-        "imageUrl": "http://lorempixel.com/800/400/city",
+        "imageUrl": "http://lorempixel.com/800/400/city/2",
         "startPrice":"35",
         "friendlyUrl":"impact-star",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-        "media": [],
+        "media": [
+            {
+                "id": 1,
+                "type": "image",
+                "source": "http://lorempixel.com/800/400/city/2",
+                "description": "Lorem ipsum 1"
+            }
+        ],
         "rating":"5",
         "address": {
           "country": "Tokio",

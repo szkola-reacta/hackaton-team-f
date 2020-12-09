@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import StarRatingComponent from "react-star-rating-component";
 import { formatCurrency } from "../../utils";
 import RoomIcon from "@material-ui/icons/Room";
+import Gallery from '../Galery/Gallery';
 import "./style.css";
 
 export default class ItemModal extends Component {
@@ -15,6 +16,7 @@ export default class ItemModal extends Component {
       description,
       address,
       email,
+      media
     } = item;
     return (
       <div className="item">
@@ -22,7 +24,7 @@ export default class ItemModal extends Component {
           x
         </button>
         <div classname="offer">
-          <img className="item__image" src={imageUrl} alt={name} />
+          <Gallery data={media} name={name}/>
           <p className="item__title"> {name}</p>
           <p className="item__price">{`from ${formatCurrency(startPrice)}/ per night`}</p>
           <StarRatingComponent name="rate1" starCount={5} value={rating} />

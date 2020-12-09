@@ -31,7 +31,7 @@ export default class OfferList extends Component {
               to={`#${item.friendlyUrl}`}
               onClick={() => this.openModal(item)}
             >
-              <Item id={item.id} data={data[index]} />
+              <Item id={item.id} data={item} />
             </NavLink>
           </li>
         );
