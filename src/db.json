@@ -43,10 +43,9 @@
       "name": "Meeru Island Resort & Spa",
       "email": "info@meeru-island.com",
       "startPrice":"80",
-      "CheckIn":null,
-      "CheckOut": null,
+      "CheckIn":"2020-06-05",
+      "CheckOut": "2020-06-15",
       "Nights":"5"
-      
     }
   ],
   "users": [

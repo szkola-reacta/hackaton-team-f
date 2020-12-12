@@ -120,4 +120,9 @@
 .Admin__bookingTable {
   width: 90vw !important;
 }
+
+.Admin__Modal {
+  width: 30vw;
+  height: 50vh;
+}
 /*# sourceMappingURL=App.css.map */

@@ -48,7 +48,6 @@ class App extends Component {
   render() {
     const { offer, bookings } = this.state;
     return (
-      // <Fade top>
       <div>
         <BrowserRouter>
           <Redirect to="/dashboard" />
@@ -98,7 +97,6 @@ class App extends Component {
           </div>
         </BrowserRouter>
       </div>
-      // </Fade>
     );
   }
 }
