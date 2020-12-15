@@ -3,7 +3,7 @@ import ClientContactForm from "../components/ClientContactForm/clientContactForm
 
 function Contact() {
   return (
-    <ClientContactForm/>
+    <ClientContactForm />
   )
 }
 

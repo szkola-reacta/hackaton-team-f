@@ -1,35 +1,37 @@
-import React from "react";
+import React, { useState } from 'react';
 import ItemsForm from "../ItemsForm/itemsForm";
 
-export default class ClientContactForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+function useInput(initialValue = '') {
+  const [value, setValue] = useState('');
 
-  handleSubmit(event) {
-    alert('Brak wypełnionych pól z danymi ' + this.state.value);
-    event.preventDefault();
-  }
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
 
-  render() {
-      return (
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Temat
-            <select>
-              <option value="option1">Problem z bookingiem</option>
-              <option value="option2">Zmiana terminu pobytu</option>
-              <option selected value="option3">Problem z płatnościami</option>
-            </select>
-          </label>
-          <ItemsForm header="Imie"/>
-          <ItemsForm header="Nazwisko"/>
-          <ItemsForm header="Adres email"/>
-          <ItemsForm header="Telefon"/>
-          <ItemsForm header="Wpisz wiadomość"/>
-          <input type="submit" value="Submit" />
-        </form>
-      );
-    }
+  return [value, handleChange];
 }
+
+function ClientContactForm() {
+  const [handleNameChange] = useInput('');
+  const [handleSurnameChange] = useInput('');
+  const [handlePhoneChange] = useInput('');
+  const [handleEmailChange] = useInput('');
+  const [handleMessageChange] = useInput('');
+
+  const handleClick = () => console.log('Wyślij formularz');
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <ItemsForm type="text" name="name" placeholder="Imie" onChange={handleNameChange} pattern="[A-Za-z]{2,99}" />
+      <ItemsForm type="text" name="surname" placeholder="Nazwisko" onChange={handleSurnameChange} pattern="[A-Za-z]{2,99}"  />
+      <ItemsForm type="text" name="email" placeholder="Adres email" onChange={handleEmailChange} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" />
+      <ItemsForm type="text" name="phone" placeholder="Numer telefonu" onChange={handlePhoneChange} pattern="[0-9]{3}[0-9]{3}[0-9]{3}" />
+      <ItemsForm type="text" name="message" placeholder="Twoja wiadomość" onChange={handleMessageChange} pattern="[A-Za-z]{2,99}" />
+      <button type="submit" onClick={handleClick}>Wyślij formularz</button>
+    </form>
+  );
+}
+export default ClientContactForm;
