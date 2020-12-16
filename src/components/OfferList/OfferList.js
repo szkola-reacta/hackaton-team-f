@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import Item from "../item/Item";
-import {Zoom } from "react-reveal";
+import {Zoom,Fade } from "react-reveal";
 import Modal from "react-modal";
 import ItemModal from "../ItemModal/ItemModal";
 import "./style.css";
@@ -38,6 +38,7 @@ export default class OfferList extends Component {
       });
     }
     return (
+      <Fade bottom>
       <div>
         <ul> {itemsToRender}</ul>
         {item && (
@@ -48,6 +49,7 @@ export default class OfferList extends Component {
           </Modal>
         )}
       </div>
+      </Fade>
     );
   }f
 }
