@@ -14,6 +14,7 @@ import Homepage from "./views/Homepage";
 import Booking from "./views/Booking";
 import Admin from "./views/Admin";
 import OfferList from "./components/OfferList/OfferList";
+import Registration from "./views/Registration";
 
 class App extends Component {
   constructor() {
@@ -54,6 +55,7 @@ class App extends Component {
           <div className="App">
             <div className="background"></div>
             <header className="App-header">
+
               <ul className="App-menu">
                 <li className="App-menu__item">
                   <NavLink to="/dashboard">Start</NavLink>
@@ -70,6 +72,7 @@ class App extends Component {
                 <li className="App-menu__item">
                   <NavLink to="admin">Admin</NavLink>
                 </li>
+
               </ul>
             </header>
             <div>
@@ -92,6 +95,7 @@ class App extends Component {
                     />
                   )}
                 />
+                <Route path='/registration' component={Registration}/>
               </Switch>
             </div>
           </div>

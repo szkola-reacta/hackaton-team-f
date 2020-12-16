@@ -1,8 +1,9 @@
 import React from 'react';
+import ClientContactForm from "../components/ClientContactForm/clientContactForm";
 
 function Contact() {
   return (
-    <span className="pageTitle">Contact form</span>
+    <ClientContactForm />
   )
 }
 
