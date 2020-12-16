@@ -24,14 +24,14 @@ export default class OfferList extends Component {
     const { item } = this.state;
     let itemsToRender;
     if (data) {
-      itemsToRender = data.map((item) => {
+      itemsToRender = data.map((item, index) => {
         return (
-          <li>
+          <li key={item.id}>
             <NavLink
               to={`#${item.friendlyUrl}`}
               onClick={() => this.openModal(item)}
             >
-              <Item id={item.id} data={data[item.id - 1]} />
+              <Item id={item.id} data={item} />
             </NavLink>
           </li>
         );

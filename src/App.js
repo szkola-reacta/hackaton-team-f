@@ -51,7 +51,6 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <Redirect to="/dashboard" />
           <div className="App">
             <div className="background"></div>
             <header className="App-header">
@@ -83,7 +82,7 @@ class App extends Component {
                   component={() => <OfferList data={offer} />}
                 />
                 <Route path="/contact" component={Contact} />
-                <Route path="/search" component={Search} />
+                <Route path={['/search/:query']} component={Search} />
                 <Route path="/booking" component={Booking} />
                 <Route path="/booking" component={Booking} />
                 <Route
@@ -95,6 +94,9 @@ class App extends Component {
                     />
                   )}
                 />
+                <Route path="*">
+                  <Redirect to='/dashboard'/>
+                </Route>
                 <Route path='/registration' component={Registration}/>
               </Switch>
             </div>
