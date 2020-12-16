@@ -12,7 +12,7 @@ export default class Item extends Component {
         <img src={imageUrl} alt={name} />
         <div className="offer__description">
           <span className="title">{name} </span>
-          <StarRatingComponent name="rate1" starCount={5} value={rating} />
+          <StarRatingComponent name="rate1" starCount={5} value={Number(rating)} />
           <div className="shortDescription">
             <span>Description : </span>
             <p style={{ overflow: "hidden", textOverflow: "ellipsis" }}>

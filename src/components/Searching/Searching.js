@@ -1,99 +1,82 @@
-import React, { useState } from 'react';
-import { format } from 'date-fns';
-import { FormControl, TextField, Select, MenuItem, InputLabel } from '@material-ui/core';
-
+import React from 'react';
+import { FormControl, TextField, Button } from '@material-ui/core';
 import styles from './Searching.module.scss';
-
-const data = [
-  {id: 1, place: 1, name: 'Place 1', startDate: '2020-01-01', endDate: '2021-12-31'},
-  {id: 2, place: 1, name: 'Place 2', startDate: '2020-02-01', endDate: '2021-12-31'},
-  {id: 3, place: 2, name: 'Place 3', startDate: '2020-02-01', endDate: '2021-10-31'},
-  {id: 4, place: 3, name: 'Place 4', startDate: '2020-01-01', endDate: '2021-12-31'}
-]
-const places = [
-  {id: 1, name: 'Warsaw'},
-  {id: 2, name: 'Gdansk'},
-  {id: 3, name: 'Poznan'}
-]
+import { withRouter } from 'react-router-dom';
+import axios from 'axios';
+import OfferList from '../OfferList/OfferList';
 
 class Searching extends React.Component {
-  state = {
-    place: null,
-    startDate: format(Date.now(), 'yyyy-MM-dd'),
-    endDate: '',
-    people: 1,
-    data: data
+  constructor(props) {
+    super(props);
+    this.state = {
+      fields: {
+        place: this.props.match.params.query
+      }, 
+      data: [],
+      results: null
+    }
   }
 
-  handleClick = (e) => {
-    console.log('click');
-    console.log(Date.now());
+ async loadData() {
+    await axios.get('http://localhost:3001/offer').then((res) => {
+      this.setState({
+        data: res.data
+      });
+    });
+    await this.filterData();
   }
-  
-  handleChange = (e) => {
+
+  filterData() {
+    const { place } = this.state.fields;
+    const newData =  this.state.data.filter(item => (
+      item.address.country.includes(place) ||
+      item.name.includes(place)));
     this.setState({
+      results: newData
+    });
+  }
+
+  componentDidMount() {
+    this.loadData();
+  }
+
+  handleChange = (e) => {
+    this.setState({fields: {
       [e.target.name]: e.target.value
+    }
     })
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { place } = this.state;
-    const newData = data.filter(item => item.place === place)
-    this.setState({
-      data: newData
-    })
+    const { place } = this.state.fields;
+    this.props.history.push('/search/'+place);
+    this.filterData();
   }
+
   render() {
-    const { place, startDate, endDate, people, data } = this.state;
+    const { place } = this.state.fields;
+    const { results } = this.state;
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <FormControl>
-            <InputLabel id='places'>Places</InputLabel>
-            <Select labelId='places' id='place' name='place' value={place} onChange={this.handleChange}>
-              {places.map(({id, name}) => (
-                <MenuItem key={id} value={id}>{name}</MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-          <FormControl>
-            <InputLabel id='persons'>Persons</InputLabel>
-            <Select labelId='persons' id='persons' name='people' value={people} onChange={this.handleChange}>
-              <MenuItem value='1'>1 person</MenuItem>
-              <MenuItem value='2'>2 persons</MenuItem>
-              <MenuItem value='3'>3 persons</MenuItem>
-              <MenuItem value='4'>4 persons</MenuItem>
-              <MenuItem value='5'>5 persons</MenuItem>
-              <MenuItem value='6'>6 persons</MenuItem>
-            </Select>
-          </FormControl>
-          <TextField
-          id='startDate'
-          name='startDate'
-          label='Starting date'
-          type='date'
-          value={startDate}
-          defaultValue={startDate}
-          onChange={this.handleChange}/>
-          <TextField
-          id='endDate'
-          name='endDate'
-          label='Ending date'
-          type='date'
-          value={endDate}
-          defaultValue={startDate}
-          onChange={this.handleChange}/>
-          <button type='submit' onClick={this.handleClick}>Search</button>
+      <div className={styles.root}>
+        <form onSubmit={this.handleSubmit} action='search' className={styles.form}>
+          <FormControl className={styles.input}>
+            <TextField
+            id='place'
+            name='place'
+            label="let's find some place"
+            value={place}
+            onChange={this.handleChange}
+            required
+            autoComplete='off'
+            />
+            </FormControl>
+          <Button type='submit' variant='outlined' color='default' className={styles.btn}>Let's go!</Button>
         </form>
-        <div>
-          {data.map(({id, name}) => (
-            <div key={id}>{name}</div>
-          ))}
-        </div>
+        {results && <OfferList data={results}/>}
       </div>
     )
   }
 }
 
-export default Searching;
+export default withRouter(Searching);
