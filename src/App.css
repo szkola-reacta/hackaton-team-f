@@ -102,7 +102,7 @@
   font-family: "Aquafina";
   padding: 20vh 20vw;
 }
-.homeSelect {
+/* .homeSelect {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
@@ -117,4 +117,18 @@
 .homeSelect__box--winter {
   background-image: url("./assets/winter.jpg");
 }
+.homeSelect__go {
+  width: 10vw;
+  height: 7vh;
+  background:transparent;
+  color:white;
+  border: 1px solid white;
+  transition: $transition;
+  font-size: 1.2em;
+  font-weight: 900;
+}
+.homeSelect__go:hover{
+  background: white;
+  color:$MetalicSeaweed;
+} */
 /*# sourceMappingURL=App.css.map */

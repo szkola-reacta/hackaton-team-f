@@ -38,6 +38,7 @@ class App extends Component {
       // <Fade top>
       <div>
         <BrowserRouter>
+        <Route path="/home" component={HomeSelect} />
           <Redirect to="/home" />
           <div className="App">
             <div className="background"></div>
@@ -64,7 +65,7 @@ class App extends Component {
                   path="/offer"
                   component={() => <OfferList data={data} />}
                 />
-                <Route path="/home" component={HomeSelect} />
+                
                 <Route path="/contact" component={Contact} />
                 <Route path="/search" component={Search} />
                 <Route path="/booking" component={Booking} />
