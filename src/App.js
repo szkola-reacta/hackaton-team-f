@@ -7,7 +7,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import "./App.css";
-import axios from "axios";
+import api from './api';
 import Search from "./views/Search";
 import Contact from "./views/Contact";
 import Homepage from "./views/Homepage";
@@ -31,10 +31,10 @@ class App extends Component {
     this.loadBookings();
   }
   load(element) {
-    let itemUrl = `http://localhost:3001/${element}`;
     let el;
-    axios.get(itemUrl).then((response) => {
-      el = response.data;
+    api.get(`${element}`)
+    .then((response) => {
+      el = response;
       this.setState({
         [element]: el,
       });
@@ -60,16 +60,16 @@ class App extends Component {
                   <NavLink to="/dashboard">Start</NavLink>
                 </li>
                 <li className="App-menu__item">
-                  <NavLink to="search">Search</NavLink>
+                  <NavLink to="/booking">Booking</NavLink>
                 </li>
                 <li className="App-menu__item">
-                  <NavLink to="booking">Booking</NavLink>
+                  <NavLink to="/contact">Contact</NavLink>
                 </li>
                 <li className="App-menu__item">
-                  <NavLink to="contact">Contact</NavLink>
+                  <NavLink to="/admin">Admin</NavLink>
                 </li>
                 <li className="App-menu__item">
-                  <NavLink to="admin">Admin</NavLink>
+                  <NavLink to="/registration">Registration</NavLink>
                 </li>
 
               </ul>
@@ -85,6 +85,7 @@ class App extends Component {
                 <Route path={['/search/:query']} component={Search} />
                 <Route path="/booking" component={Booking} />
                 <Route path="/booking" component={Booking} />
+                
                 <Route
                   path="/admin"
                   component={() => (
@@ -94,10 +95,10 @@ class App extends Component {
                     />
                   )}
                 />
+                <Route path='/registration' component={Registration}/>
                 <Route path="*">
                   <Redirect to='/dashboard'/>
                 </Route>
-                <Route path='/registration' component={Registration}/>
               </Switch>
             </div>
           </div>

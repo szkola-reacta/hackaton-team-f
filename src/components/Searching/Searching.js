@@ -1,8 +1,8 @@
 import React from 'react';
 import { FormControl, TextField, Button } from '@material-ui/core';
-import styles from './Searching.module.scss';
+import styles from './Searching.module.css';
 import { withRouter } from 'react-router-dom';
-import axios from 'axios';
+import api from '../../api'
 import OfferList from '../OfferList/OfferList';
 
 class Searching extends React.Component {
@@ -18,9 +18,10 @@ class Searching extends React.Component {
   }
 
  async loadData() {
-    await axios.get('http://localhost:3001/offer').then((res) => {
+   api.get("offer")
+    .then((res) => {
       this.setState({
-        data: res.data
+        data: res
       });
     });
     await this.filterData();
