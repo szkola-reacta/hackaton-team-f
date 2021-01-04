@@ -14,6 +14,7 @@ import Homepage from "./views/Homepage";
 import Booking from "./views/Booking";
 import OfferList from "./components/OfferList/OfferList";
 import Registration from "./views/Registration";
+import Page404 from './views/404';
 
 class App extends Component {
   state = {
@@ -43,10 +44,10 @@ class App extends Component {
             <header className="App-header">
               <ul className='App-menu'>
                 <li className='App-menu__item'><NavLink to='/dashboard'>Start</NavLink></li>
-                <li className='App-menu__item'><NavLink to='search'>Search</NavLink></li>
-                <li className='App-menu__item'><NavLink to='booking'>Booking</NavLink></li>
-                <li className='App-menu__item'><NavLink to='contact'>Contact</NavLink></li>
-                <li className='App-menu__item'><NavLink to='registration'>Registration</NavLink></li>
+                <li className='App-menu__item'><NavLink to='/search'>Search</NavLink></li>
+                <li className='App-menu__item'><NavLink to='/booking'>Booking</NavLink></li>
+                <li className='App-menu__item'><NavLink to='/contact'>Contact</NavLink></li>
+                <li className='App-menu__item'><NavLink to='/registration'>Registration</NavLink></li>
               </ul>
             </header>
             <div>
@@ -57,13 +58,10 @@ class App extends Component {
                   component={() => <OfferList data={data} />}
                 />
                 <Route path="/contact" component={Contact} />
-                <Route path={['/search/:query']} component={Search} />
-                <Route path="/booking" component={Booking} />
-                <Route path="/booking" component={Booking} />
-                <Route path="*">
-                  <Redirect to='/dashboard'/>
-                </Route>
+                <Route path="/search/:query" component={Search} />
+                <Route path="/booking/:slug" component={Booking} />
                 <Route path='/registration' component={Registration}/>
+                <Route path="*" component={Page404} />
               </Switch>
             </div>
           </div>

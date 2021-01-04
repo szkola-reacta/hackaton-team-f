@@ -1,9 +1,15 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import Searching from '../components/Searching/Searching';
 
-function page404() {
+function Page404() {
   return (
-    <h2>Page not found</h2>
+    <>
+      <h2>Page not found</h2>
+      <Searching/>
+      or return to {<NavLink to="/dashboard">Homepage</NavLink>}
+    </>
   )
 }
 
-export default page404;
+export default Page404;
