@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import styles from './Gallery.module.scss';
 import clsx from 'clsx';
 
-function Gallery({data, name}) {
-  const [activeMedia, setActiveMedia] = useState([]);
+function Gallery({name, data}) {
+  const [mediaData, setMediaData] = useState([]);
+  const [activeMedia, setActiveMedia] = useState({});
 
   const DEFAULT_MEDIA = {
     id: 1,
@@ -12,20 +13,24 @@ function Gallery({data, name}) {
     description: name};
 
   useEffect(() => {
-    if(!data.length) {
+    if(!data.length){
       data.push(DEFAULT_MEDIA)
     }
-    setActiveMedia(data[0])
-  },[]);
+    setMediaData(data);
+  },[data]);
+
+  useEffect(() => {
+    setActiveMedia({...mediaData[0]})
+  },[mediaData])
 
   const handleClick = (e) => {
     e.preventDefault();
     let index = (e.currentTarget.getAttribute('data-item'));
-    setActiveMedia(data[index]);
+    setActiveMedia({...mediaData[index]});
   };
 
-  const makeThumb = (media, description) => {
-    return <img className={styles.image} src={media} alt={description}/>;
+  const makeThumb = (source, description) => {
+    return <img className={styles.image} src={source} alt={description}/>;
   }
 
   const setMedia = (media, thumb) => {
@@ -39,7 +44,7 @@ function Gallery({data, name}) {
         let newSource = `https://img.youtube.com/vi/${thmb}/sddefault.jpg`;
         return makeThumb(newSource, description);
       }
-      return <iframe width="100%" height="400" src={source} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>;
+      return <iframe width="100%" height="400" src={source} title={description} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>;
     }
   }
 
@@ -54,9 +59,9 @@ function Gallery({data, name}) {
       <div>
         <div className={styles.thumbs}>
           {
-          data.map((media, index) => (
+          mediaData.map((media, index) => (
             <div 
-            className={clsx(styles.thumb, media==activeMedia ? styles.active : '')} 
+            className={clsx(styles.thumb, media.id === activeMedia.id ? styles.active : '')} 
             key={index} 
             onClick={handleClick} 
             data-item={index}>
