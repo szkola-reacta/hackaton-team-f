@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './Gallery.module.scss';
+import styles from './Gallery.module.css';
 import clsx from 'clsx';
 
 function Gallery({data, name}) {
