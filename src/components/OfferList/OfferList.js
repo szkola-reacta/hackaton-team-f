@@ -28,8 +28,7 @@ export default class OfferList extends Component {
         return (
           <li key={item.id}>
             <NavLink
-              to={`#${item.friendlyUrl}`}
-              onClick={() => this.openModal(item)}
+              to={`/booking/${item.friendlyUrl}`}
             >
               <Item id={item.id} data={item} />
             </NavLink>
