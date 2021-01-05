@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 import Gallery from "../components/Galery/Gallery";
-import Page404 from "../views/404";
+import Page404 from "../pages/404";
 
 function Booking() {
   const { slug } = useParams();
