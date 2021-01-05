@@ -7,13 +7,13 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
-import Search from "./views/Search";
-import Contact from "./views/Contact";
-import Homepage from "./views/Homepage";
-import Booking from "./views/Booking";
+import Search from "./pages/Search";
+import Contact from "./pages/Contact";
+import Homepage from "./pages/Homepage";
+import Booking from "./pages/Booking";
 import OfferList from "./components/OfferList/OfferList";
-import Registration from "./views/Registration";
-import Page404 from "./views/404";
+import Registration from "./pages/Registration";
+import Page404 from "./pages/404";
 
 class App extends Component {
   state = {
