@@ -13,7 +13,7 @@ export default class ItemsForm extends React.Component {
     const { type, name, placeholder, pattern } = this.props;
     return (
       <div>
-        <input type={type} name={name} placeholder={placeholder} onChange={this.handleChange} pattern={pattern}  required />
+        <input type={type} name={name} placeholder={placeholder} onChange={this.handleChange} pattern={pattern} required />
       </div>
     );
   }

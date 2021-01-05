@@ -1,7 +1,7 @@
-import React from 'react';
-import { Container, Typography } from '@material-ui/core';
+import React from "react";
+import { Container, Typography } from "@material-ui/core";
 
-import Searching from '../components/Searching/Searching';
+import Searching from "../components/Searching/Searching";
 
 function Search() {
   return (
@@ -11,7 +11,7 @@ function Search() {
       </Typography>
       <Searching/>
     </Container>
-  )
+  );
 }
 
 export default Search;

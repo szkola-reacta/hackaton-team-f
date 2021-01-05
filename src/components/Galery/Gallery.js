@@ -1,52 +1,53 @@
-import React, { useEffect, useState } from 'react';
-import styles from './Gallery.module.scss';
-import clsx from 'clsx';
+import React, { useEffect, useState } from "react";
+import styles from "./Gallery.module.scss";
+import clsx from "clsx";
 
-function Gallery({name, data}) {
+function Gallery({ name, data }) {
   const [mediaData, setMediaData] = useState([]);
   const [activeMedia, setActiveMedia] = useState({});
 
   const DEFAULT_MEDIA = {
     id: 1,
-    type: 'image',
-    source: '/assets/images/edvin-johansson.jpg',
-    description: name};
+    type: "image",
+    source: "/assets/images/edvin-johansson.jpg",
+    description: name
+  };
 
   useEffect(() => {
-    if(!data.length){
-      data.push(DEFAULT_MEDIA)
+    if(!data.length) {
+      data.push(DEFAULT_MEDIA);
     }
     setMediaData(data);
-  },[data]);
+  }, [data]);
 
   useEffect(() => {
-    setActiveMedia({...mediaData[0]})
-  },[mediaData])
+    setActiveMedia({ ...mediaData[0] });
+  }, [mediaData]);
 
   const handleClick = (e) => {
     e.preventDefault();
-    let index = (e.currentTarget.getAttribute('data-item'));
-    setActiveMedia({...mediaData[index]});
+    let index = (e.currentTarget.getAttribute("data-item"));
+    setActiveMedia({ ...mediaData[index] });
   };
 
   const makeThumb = (source, description) => {
     return <img className={styles.image} src={source} alt={description}/>;
-  }
+  };
 
   const setMedia = (media, thumb) => {
-    const {type, source, description} = media;
+    const { type, source, description } = media;
 
-    if(type === 'image') {
+    if(type === "image") {
       return makeThumb(source, description);
-    } else if(type === 'video') {
+    } else if(type === "video") {
       if(thumb) {
-        const thmb = source.split('/').pop();
+        const thmb = source.split("/").pop();
         let newSource = `https://img.youtube.com/vi/${thmb}/sddefault.jpg`;
         return makeThumb(newSource, description);
       }
       return <iframe width="100%" height="400" src={source} title={description} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>;
     }
-  }
+  };
 
   return (
     <div className={styles.gallery}>
@@ -60,10 +61,10 @@ function Gallery({name, data}) {
         <div className={styles.thumbs}>
           {
           mediaData.map((media, index) => (
-            <div 
-            className={clsx(styles.thumb, media.id === activeMedia.id ? styles.active : '')} 
-            key={index} 
-            onClick={handleClick} 
+            <div
+            className={clsx(styles.thumb, media.id === activeMedia.id ? styles.active : "")}
+            key={index}
+            onClick={handleClick}
             data-item={index}>
               {setMedia(media, true)}
             </div>
@@ -72,7 +73,7 @@ function Gallery({name, data}) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Gallery;

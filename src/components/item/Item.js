@@ -6,7 +6,7 @@ import "./style.css";
 export default class Item extends Component {
   render() {
     const { name, description, rating, imageUrl, startPrice } = this.props.data;
-    console.log(description)
+    
     return (
       <div className="offer">
         <img src={imageUrl} alt={name} />

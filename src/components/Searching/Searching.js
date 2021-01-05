@@ -1,10 +1,10 @@
-import React from 'react';
-import { FormControl, TextField, Button } from '@material-ui/core';
-import styles from './Searching.module.scss';
-import { withRouter } from 'react-router-dom';
-import axios from 'axios';
-import OfferList from '../OfferList/OfferList';
-import Alert from '../Alert/Alert';
+import React from "react";
+import { FormControl, TextField, Button } from "@material-ui/core";
+import styles from "./Searching.module.scss";
+import { withRouter } from "react-router-dom";
+import axios from "axios";
+import OfferList from "../OfferList/OfferList";
+import Alert from "../Alert/Alert";
 
 class Searching extends React.Component {
   constructor(props) {
@@ -12,15 +12,15 @@ class Searching extends React.Component {
     this.state = {
       fields: {
         place: this.props.match.params.query
-      }, 
+      },
       data: [],
       results: null,
       clicked: true
-    }
+    };
   }
 
  async loadData() {
-    await axios.get('http://localhost:3001/offer').then((res) => {
+    await axios.get("http://localhost:3001/offer").then((res) => {
       this.setState({
         data: res.data
       });
@@ -31,7 +31,7 @@ class Searching extends React.Component {
   filterData() {
     const { place } = this.state.fields;
     if(place) {
-    const newData =  this.state.data.filter(item => (
+    const newData = this.state.data.filter(item => (
       item.address.country.toLowerCase().includes(place.toLowerCase()) ||
       item.name.toLowerCase().includes(place.toLowerCase())));
     this.setState({
@@ -45,10 +45,10 @@ class Searching extends React.Component {
   }
 
   handleChange = (e) => {
-    this.setState({fields: {
+    this.setState({ fields: {
       [e.target.name]: e.target.value
-    }
-    })
+      }
+    });
   }
 
   handleSubmit = (e) => {
@@ -56,20 +56,20 @@ class Searching extends React.Component {
     const { place } = this.state.fields;
     this.setState({
       clicked: !this.state.clicked
-    })
-    this.props.history.push('/search/'+place);
+    });
+    this.props.history.push("/search/"+place);
     this.filterData();
   }
 
   getResults(results) {
     if(results.length) {
-      return <OfferList data={results}/>
+      return <OfferList data={results}/>;
     }
-    if(!results.length & results!=null) {
+    if(!results.length & results !== null) {
       return <Alert
       message="Sorry, we can't find any place right now. Try find another place or try again later."
       clicked={this.state.clicked}
-      />
+      />;
     }
   }
 
@@ -78,24 +78,24 @@ class Searching extends React.Component {
     const { results } = this.state;
     return (
       <div className={styles.root}>
-        <form onSubmit={this.handleSubmit} action='search' className={styles.form}>
+        <form onSubmit={this.handleSubmit} action="search" className={styles.form}>
           <FormControl className={styles.input}>
             <TextField
-            id='place'
-            name='place'
+            id="place"
+            name="place"
             label="let's find some place"
             value={place}
             onChange={this.handleChange}
             required
-            autoComplete='off'
+            autoComplete="off"
             />
             </FormControl>
-          <Button type='submit' variant='outlined' color='default' className={styles.btn}>Let's go!</Button>
+          <Button type="submit" variant="outlined" color="default" className={styles.btn}>Let's go!</Button>
         </form>
         { results && this.getResults(results)}
        
       </div>
-    )
+    );
   }
 }
 

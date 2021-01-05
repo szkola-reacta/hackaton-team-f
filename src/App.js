@@ -3,8 +3,7 @@ import {
   BrowserRouter,
   Switch,
   Route,
-  NavLink,
-  Redirect,
+  NavLink
 } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
@@ -14,17 +13,19 @@ import Homepage from "./views/Homepage";
 import Booking from "./views/Booking";
 import OfferList from "./components/OfferList/OfferList";
 import Registration from "./views/Registration";
-import Page404 from './views/404';
+import Page404 from "./views/404";
 
 class App extends Component {
   state = {
     data: null,
   };
+
   componentDidMount() {
     this.loadData();
   }
+
   loadData() {
-    let itemUrl = `http://localhost:3001/offer`;
+    let itemUrl = "http://localhost:3001/offer";
     let data;
     axios.get(itemUrl).then((response) => {
       data = response.data;
@@ -33,6 +34,7 @@ class App extends Component {
       });
     });
   }
+
   render() {
     const { data } = this.state;
     return (
@@ -52,7 +54,7 @@ class App extends Component {
             </header>
             <div>
               <Switch>
-                <Route exact path="/dashboard" component={Homepage} />
+                <Route exact path={["/dashboard", "/"]} component={Homepage} />
                 <Route
                   path="/offer"
                   component={() => <OfferList data={data} />}

@@ -2,14 +2,13 @@ import React, { Component } from "react";
 import StarRatingComponent from "react-star-rating-component";
 import { formatCurrency } from "../../utils";
 import RoomIcon from "@material-ui/icons/Room";
-import Gallery from '../Galery/Gallery';
+import Gallery from "../Galery/Gallery";
 import "./style.css";
 
 export default class ItemModal extends Component {
   render() {
     const { item, closeModal } = this.props;
     const {
-      imageUrl,
       name,
       startPrice,
       rating,
