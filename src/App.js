@@ -60,7 +60,7 @@ class App extends Component {
                   component={() => <OfferList data={data} />}
                 />
                 <Route path="/contact" component={Contact} />
-                <Route path="/search/:query" component={Search} />
+                <Route path={["/search", "/search/:query"]} component={Search} />
                 <Route path="/booking/:slug" component={Booking} />
                 <Route path='/registration' component={Registration}/>
                 <Route path="*" component={Page404} />
