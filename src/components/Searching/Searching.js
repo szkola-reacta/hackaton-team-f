@@ -20,12 +20,13 @@ class Searching extends React.Component {
   }
 
  async loadData() {
-   api.get("offer")
+   await api.get("offer")
     .then((res) => {
       this.setState({
         data: res
       });
     });
+    console.log(this.state.data);
     await this.filterData();
   }
 

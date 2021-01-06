@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import {useForm} from "react-hook-form";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { withStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -29,13 +29,15 @@ const StyledTableRow = withStyles((theme) => ({
 const properData = {
   login:"admin",
   password: "admin"
-}
+};
+
 function Admin(props) {
-  const [isModalActive,setIsModalActive]=useState(true);
-  const [login,setLogin] = useState('');
-  const [password,setPassword] = useState('');
-  const [table,setTable] = useState(false);
+  const [isModalActive, setIsModalActive]=useState(true);
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
+  const [table, setTable] = useState(false);
   const { bookings } = props;
+  /*
   function createData(
     bookingID,
     HotelID,
@@ -47,6 +49,7 @@ function Admin(props) {
   ) {
     return { bookingID, HotelID, name, email, CheckIn, CheckOut, Nights };
   }
+  */
   let tableBody = bookings.map((row) => (
     <StyledTableRow key={row.name}>
       <StyledTableCell component="th" scope="row" align="center">
@@ -63,17 +66,17 @@ function Admin(props) {
   ));
   const { register, handleSubmit } = useForm();
   const onSubmit = data => {
-    const {login,password} = data;
-    setLogin(login);
-    setPassword(password);
-    if ((login===properData.login)&&(password===properData.password))
+    const { login: uLogin, password: uPassword } = data;
+    setLogin(uLogin);
+    setPassword(uPassword);
+    if((login===properData.login)&&(password===properData.password))
     {
       setTable(true);
       setIsModalActive(false);
     }
-    else{
+    else {
 
-    } 
+    }
   };
 
   return (
