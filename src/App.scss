@@ -68,3 +68,18 @@
   font-family: "Aquafina";
   padding: 20vh 20vw;
 }
+/* ----ADMIN PANEL--- */
+.Admin{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__bookingTable{
+    width: 90vw!important;
+    
+  }
+}
+
+.Admin__Modal{
+  width: 30vw;
+  height: 50vh;
+}

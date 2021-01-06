@@ -56,7 +56,7 @@
             {
                 "id": 2,
                 "type": "image",
-                "source": "http://lorempixel.com/800/400/nature/3",
+                "source": "http://lorempixel.com/800/400/nature/2",
                 "description": "Lorem ipsum 2"
             },
             {
@@ -104,6 +104,19 @@
         },
         "id": 4
       }
+  ],
+  "bookings": [
+    {
+      "bookingID":1,
+      "id": 1,
+      "clientID": 1001,
+      "name": "Meeru Island Resort & Spa",
+      "email": "info@meeru-island.com",
+      "startPrice":"80",
+      "CheckIn":"2020-06-05",
+      "CheckOut": "2020-06-15",
+      "Nights":"5"
+    }
   ],
   "users": [
     {

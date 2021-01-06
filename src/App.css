@@ -64,7 +64,7 @@
 }
 
 .App-menu__item a:hover, .App-menu__item a.active {
-  color: #177E89;
+  color: #177e89;
 }
 
 .homepage {
@@ -91,7 +91,7 @@
 
 .homepage .go:hover {
   background: white;
-  color: #177E89;
+  color: #177e89;
 }
 
 .pageTitle {
@@ -101,5 +101,28 @@
   color: white;
   font-family: "Aquafina";
   padding: 20vh 20vw;
+}
+
+/* ----ADMIN PANEL--- */
+.Admin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Admin__bookingTable {
+  width: 90vw !important;
+}
+
+.Admin__Modal {
+  width: 30vw;
+  height: 50vh;
 }
 /*# sourceMappingURL=App.css.map */
