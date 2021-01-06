@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import ItemsForm from "../ItemsForm/itemsForm";
 
-function useInput(initialValue = '') {
-  const [value, setValue] = useState('');
+function useInput(initialValue = "") {
+  const [value, setValue] = useState(initialValue);
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -12,16 +12,16 @@ function useInput(initialValue = '') {
 }
 
 function RegistrationForm() {
-  const [handleNameChange] = useInput('');
-  const [handleSurnameChange] = useInput('');
-  const [handlePhoneChange] = useInput('');
-  const [handleEmailChange] = useInput('');
-  const [handlePasswordChange] = useInput('');
-  const [handleNameAccountChange] = useInput('');
-  const [handleAdressChange] = useInput('');
-  const [handlePostCodeChange] = useInput('');
+  const [handleNameChange] = useInput("");
+  const [handleSurnameChange] = useInput("");
+  const [handlePhoneChange] = useInput("");
+  const [handleEmailChange] = useInput("");
+  const [handlePasswordChange] = useInput("");
+  const [handleNameAccountChange] = useInput("");
+  const [handleAdressChange] = useInput("");
+  const [handlePostCodeChange] = useInput("");
 
-  const handleClick = () => console.log('Wyślij formularz rejestracji');
+  const handleClick = () => console.log("Wyślij formularz rejestracji");
   const handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -29,7 +29,7 @@ function RegistrationForm() {
   return (
     <form onSubmit={handleSubmit}>
       <ItemsForm type="text" name="name" placeholder="Imie" onChange={handleNameChange} pattern="[A-Za-z]{2,99}" />
-      <ItemsForm type="text" name="surname" placeholder="Nazwisko" onChange={handleSurnameChange} pattern="[A-Za-z]{2,99}"  />
+      <ItemsForm type="text" name="surname" placeholder="Nazwisko" onChange={handleSurnameChange} pattern="[A-Za-z]{2,99}" />
       <ItemsForm type="text" name="email" placeholder="Adres email" onChange={handleEmailChange} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" />
       <ItemsForm type="text" name="password" placeholder="Hasło" onChange={handlePasswordChange} pattern="[A-Za-z0-9]{8,16}" />
       <ItemsForm type="text" name="name" placeholder="Nazwa konta" onChange={handleNameAccountChange} pattern="[A-Za-z]{2,99}" />

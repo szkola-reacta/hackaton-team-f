@@ -1,6 +1,6 @@
-import React from 'react';
-import {NavLink } from 'react-router-dom';
-import Searching from '../components/Searching/Searching';
+import React from "react";
+import {NavLink } from "react-router-dom";
+import Searching from "../components/Searching/Searching";
 
 function Homepage() {
   return (
@@ -15,7 +15,7 @@ function Homepage() {
     </button>
     </NavLink>
     </div>
-  )
+  );
 }
 
 export default Homepage;

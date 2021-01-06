@@ -3,18 +3,18 @@ import {
   BrowserRouter,
   Switch,
   Route,
-  NavLink,
-  Redirect,
+  NavLink
 } from "react-router-dom";
 import "./App.css";
-import api from './api';
+import api from "./api";
 import Search from "./views/Search";
 import Contact from "./views/Contact";
 import Homepage from "./views/Homepage";
 import Booking from "./views/Booking";
 import Admin from "./views/Admin";
 import OfferList from "./components/OfferList/OfferList";
-import Registration from "./views/Registration";
+import Registration from "./pages/Registration";
+import Page404 from "./pages/404";
 
 class App extends Component {
   constructor() {
@@ -30,6 +30,7 @@ class App extends Component {
     this.loadOffer();
     this.loadBookings();
   }
+
   load(element) {
     let el;
     api.get(`${element}`)
@@ -40,12 +41,15 @@ class App extends Component {
       });
     });
   }
+  
   loadOffer() {
     this.load("offer");
   }
+  
   loadBookings() {
     this.load("bookings");
   }
+
   render() {
     const { offer, bookings } = this.state;
     return (
@@ -54,7 +58,6 @@ class App extends Component {
           <div className="App">
             <div className="background"></div>
             <header className="App-header">
-
               <ul className="App-menu">
                 <li className="App-menu__item">
                   <NavLink to="/dashboard">Start</NavLink>
@@ -71,21 +74,18 @@ class App extends Component {
                 <li className="App-menu__item">
                   <NavLink to="/registration">Registration</NavLink>
                 </li>
-
               </ul>
             </header>
             <div>
               <Switch>
-                <Route exact path="/dashboard" component={Homepage} />
+                <Route exact path={["/dashboard", "/"]} component={Homepage} />
                 <Route
                   path="/offer"
                   component={() => <OfferList data={offer} />}
                 />
                 <Route path="/contact" component={Contact} />
-                <Route path={['/search/:query']} component={Search} />
-                <Route path="/booking" component={Booking} />
-                <Route path="/booking" component={Booking} />
-                
+                <Route path={["/search", "/search/:query"]} component={Search} />
+                <Route path="/booking/:slug" component={Booking} />                
                 <Route
                   path="/admin"
                   component={() => (
@@ -95,10 +95,8 @@ class App extends Component {
                     />
                   )}
                 />
-                <Route path='/registration' component={Registration}/>
-                <Route path="*">
-                  <Redirect to='/dashboard'/>
-                </Route>
+                <Route path="/registration" component={Registration}/>
+                <Route path="*" component={Page404} />
               </Switch>
             </div>
           </div>
