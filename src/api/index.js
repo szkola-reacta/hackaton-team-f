@@ -8,7 +8,7 @@ function request(endpoint, method = "GET", data = null) {
       Authorization: "Bearer token",
     },
   };
-  if (method === "POST" || method === "PATCH") {
+  if(method === "POST" || method === "PATCH") {
     config.body = JSON.stringify(data);
   }
   const url = `${API_URL}/${endpoint}`;
@@ -31,9 +31,9 @@ function _delete(endpoint) {
   return request(endpoint, "DELETE");
 }
 
-export default{
+export default {
     get,
     post,
     patch,
     delete:_delete
-}
+};
