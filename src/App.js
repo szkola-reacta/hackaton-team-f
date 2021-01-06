@@ -7,18 +7,18 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import api from "./api";
-import Search from "./views/Search";
-import Contact from "./views/Contact";
-import Homepage from "./views/Homepage";
-import Booking from "./views/Booking";
-import Admin from "./views/Admin";
+import Search from "./pages/Search";
+import Contact from "./pages/Contact";
+import Homepage from "./pages/Homepage";
+import Booking from "./pages/Booking";
+import Admin from "./pages/Admin";
 import OfferList from "./components/OfferList/OfferList";
 import Registration from "./pages/Registration";
 import Page404 from "./pages/404";
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       offer: null,
       bookings: null,
@@ -84,8 +84,8 @@ class App extends Component {
                   component={() => <OfferList data={offer} />}
                 />
                 <Route path="/contact" component={Contact} />
-                <Route path={["/search", "/search/:query"]} component={Search} />
-                <Route path="/booking/:slug" component={Booking} />                
+                <Route path={["/search/:query", "/search"]} component={Search} />
+                <Route path="/booking/:slug" component={Booking} />
                 <Route
                   path="/admin"
                   component={() => (
