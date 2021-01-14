@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ItemsForm from "../ItemsForm/itemsForm";
+import { Button, TextField } from "@material-ui/core";
 
 function useInput(initialValue = "") {
   const [value, setValue] = useState(initialValue);
@@ -27,16 +27,63 @@ function RegistrationForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <ItemsForm type="text" name="name" placeholder="Imie" onChange={handleNameChange} pattern="[A-Za-z]{2,99}" />
-      <ItemsForm type="text" name="surname" placeholder="Nazwisko" onChange={handleSurnameChange} pattern="[A-Za-z]{2,99}" />
-      <ItemsForm type="text" name="email" placeholder="Adres email" onChange={handleEmailChange} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" />
-      <ItemsForm type="text" name="password" placeholder="Hasło" onChange={handlePasswordChange} pattern="[A-Za-z0-9]{8,16}" />
-      <ItemsForm type="text" name="name" placeholder="Nazwa konta" onChange={handleNameAccountChange} pattern="[A-Za-z]{2,99}" />
-      <ItemsForm type="text" name="address" placeholder="Adres" onChange={handleAdressChange} />
-      <ItemsForm type="text" name="postcode" placeholder="Kod pocztowy" onChange={handlePostCodeChange} />
-      <ItemsForm type="text" name="phone" placeholder="Numer telefonu" onChange={handlePhoneChange} pattern="[0-9]{3}[0-9]{3}[0-9]{3}" />
-      <button type="submit" onClick={handleClick}>Rejestracja</button>
+    <form className="Registration" onSubmit={handleSubmit}>
+        <div>
+        <TextField
+        required
+        name="name"
+        label="Name"
+        onChange={handleNameChange}
+        pattern="[A-Za-z]{2,99}"
+      />
+      <TextField
+        required
+        name="surname"
+        label="Surname"
+        onChange={handleSurnameChange}
+        pattern="[A-Za-z]{2,99}"
+      />
+      <TextField
+        name="email"
+        label="Email"
+        onChange={handleEmailChange}
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$"
+      />
+      <TextField
+        name="password"
+        label="Password"
+        onChange={handlePasswordChange}
+        pattern="[A-Za-z0-9]{8,16}"
+      />
+      <TextField
+        name="account_name"
+        label="Account name"
+        onChange={handleNameAccountChange}
+        pattern="[A-Za-z]{2,99}"
+      />
+      <TextField name="address" label="Address" onChange={handleAdressChange} />
+      <TextField
+        name="postcode"
+        label="Postcode"
+        onChange={handlePostCodeChange}
+      />
+      <TextField
+        type="number"
+        name="phone"
+        label="Phone"
+        onChange={handlePhoneChange}
+        pattern="[0-9]{3}[0-9]{3}[0-9]{3}"
+      />
+        </div>
+   
+      <Button
+        type="submit"
+        onClick={handleClick}
+        variant="outlined"
+        color="default"
+      >
+        Registration
+      </Button>
     </form>
   );
 }

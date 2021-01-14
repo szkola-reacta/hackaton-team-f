@@ -8,6 +8,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import { Button, TextField } from "@material-ui/core";
 import Modal from "react-modal";
 import api from "../api";
 
@@ -36,29 +37,20 @@ function Admin() {
   const [isModalActive, setIsModalActive] = useState(true);
   const [table, setTable] = useState(false);
   const [bookings, setBookings] = useState([]);
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
   const element = "bookings";
 
   useEffect(() => {
     let el;
     api.get(`${element}`).then((response) => {
       el = response;
-      setBookings(el);
     });
+    return function() {
+      setBookings(el);
+    };
   }, [isModalActive]);
 
-  /*
-  function createData(
-    bookingID,
-    HotelID,
-    name,
-    email,
-    CheckIn,
-    CheckOut,
-    Nights
-  ) {
-    return { bookingID, HotelID, name, email, CheckIn, CheckOut, Nights };
-  }
-  */
   let tableBody =
     bookings &&
     bookings.map((row) => (
@@ -75,10 +67,13 @@ function Admin() {
         <StyledTableCell align="center">{row.Nights}</StyledTableCell>
       </StyledTableRow>
     ));
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
-    const { login: uLogin, password: uPassword } = data;
-    if((uLogin === properData.login) && (uPassword === properData.password)) {
+  const handleChange = e => {
+    const { target: { name, value }} = e;
+    { name === "login" ? setLogin(value) : setPassword(value); }
+  };
+  const { handleSubmit } = useForm();
+  const onSubmit = () => {
+    if((login === properData.login) && (password === properData.password)) {
       setIsModalActive(false);
       setTable(true);
     } else {
@@ -87,16 +82,23 @@ function Admin() {
 
   return (
     <div className="Component Admin__Component">
-      <Modal className="Admin__Modal" isOpen={isModalActive}>
+      <Modal className="Admin__ComponentModal" isOpen={isModalActive} ariaHideApp={false}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input type="text" placeholder="login" name="login" ref={register} />
-          <input
-            type="password"
-            placeholder="password"
-            name="password"
-            ref={register}
+          <TextField
+            required
+            name="login"
+            label="Login"
+            onChange={handleChange}
           />
-          <input type="submit" />
+          <TextField
+            required
+            name="password"
+            label="Password"
+            onChange={handleChange}
+          />
+          <Button type="submit" variant="outlined" color="default">
+            Zaloguj się
+          </Button>
         </form>
       </Modal>
       <div className="Admin">

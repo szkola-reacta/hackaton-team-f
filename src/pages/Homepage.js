@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Searching from "../components/Searching/Searching";
-
+import { Button } from "@material-ui/core";
 function Homepage() {
   return (
     <div className="homepage">
@@ -10,9 +10,7 @@ function Homepage() {
       <Searching/>
     </div>
     <NavLink to='/offer'>
-    <button className ="go">
-      Let's go!
-    </button>
+    <Button type="submit" variant="outlined" color="default" >Show all offers</Button>
     </NavLink>
     </div>
   );

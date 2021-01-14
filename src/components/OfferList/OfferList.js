@@ -44,7 +44,7 @@ export default class OfferList extends Component {
       <div>
         <ul> {itemsToRender}</ul>
         {item && (
-          <Modal isOpen={true} onRequestClose={this.closeModal}>
+          <Modal isOpen={true} onRequestClose={this.closeModal} ariaHideApp={false}>
             <Zoom>
               <ItemModal className="modal" item={item} closeModal={this.closeModal} />
             </Zoom>
