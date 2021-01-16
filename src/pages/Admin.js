@@ -99,6 +99,7 @@ function Admin() {
           <TextField
             required
             name="password"
+            type="password"
             label="Password"
             onChange={handleChange}
           />
