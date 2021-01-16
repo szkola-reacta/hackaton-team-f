@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  NavLink
-} from "react-router-dom";
+import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
 import "./App.css";
 import api from "./api";
 import Search from "./pages/Search";
@@ -12,16 +7,19 @@ import Contact from "./pages/Contact";
 import Homepage from "./pages/Homepage";
 import Booking from "./pages/Booking";
 import Admin from "./pages/Admin";
+import Login from "./pages/Login";
 import OfferList from "./components/OfferList/OfferList";
 import Registration from "./pages/Registration";
 import Page404 from "./pages/404";
-
+import { IconButton, Menu, MenuItem } from "@material-ui/core";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 class App extends Component {
   constructor() {
     super();
     this.state = {
       offer: null,
       bookings: null,
+      anchorEl: null
     };
     this.loadBookings = this.loadBookings.bind(this);
   }
@@ -33,25 +31,35 @@ class App extends Component {
 
   load(element) {
     let el;
-    api.get(`${element}`)
-    .then((response) => {
+    api.get(`${element}`).then((response) => {
       el = response;
       this.setState({
         [element]: el,
       });
     });
   }
-  
+
   loadOffer() {
     this.load("offer");
   }
-  
+
   loadBookings() {
     this.load("bookings");
   }
 
   render() {
-    const { offer, bookings } = this.state;
+    const handleClick = (event) => {
+      this.setState({
+        anchorEl:event.currentTarget
+      });
+    };
+  
+    const handleClose = () => {
+      this.setState({
+        anchorEl:null
+      });
+    };
+    const { offer, bookings, anchorEl } = this.state;
     return (
       <div>
         <BrowserRouter>
@@ -72,7 +80,27 @@ class App extends Component {
                   <NavLink to="/admin">Admin</NavLink>
                 </li>
                 <li className="App-menu__item">
-                  <NavLink to="/registration">Registration</NavLink>
+                  <IconButton
+                    aria-controls="client-menu"
+                    aria-haspopup="true"
+                    onClick={handleClick}
+                  >
+                   <AccountCircleIcon/>
+                  </IconButton>
+                  <Menu
+                    id="client-menu"
+                    anchorEl={anchorEl}
+                    keepMounted
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                  >
+                    <MenuItem onClick={handleClose}>
+                    <NavLink to="/login">Sign in</NavLink>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                    <NavLink to="/registration">Sign up</NavLink>
+                    </MenuItem>
+                  </Menu>
                 </li>
               </ul>
             </header>
@@ -84,8 +112,12 @@ class App extends Component {
                   component={() => <OfferList data={offer} />}
                 />
                 <Route path="/contact" component={Contact} />
-                <Route path={["/search/:query", "/search"]} component={Search} />
+                <Route
+                  path={["/search/:query", "/search"]}
+                  component={Search}
+                />
                 <Route path="/booking/:slug" component={Booking} />
+                <Route path="/login" component={Login} />
                 <Route
                   path="/admin"
                   component={() => (
@@ -95,7 +127,7 @@ class App extends Component {
                     />
                   )}
                 />
-                <Route path="/registration" component={Registration}/>
+                <Route path="/registration" component={Registration} />
                 <Route path="*" component={Page404} />
               </Switch>
             </div>

@@ -22,6 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   height: 100px;
+
 }
 .App-menu {
   display: flex;
@@ -33,6 +34,9 @@
   list-style-type: none;
   font-size: 20px;
   padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   a {
     transition: $transition;
     font-weight: 200;
