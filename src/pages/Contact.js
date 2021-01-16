@@ -3,7 +3,9 @@ import ClientContactForm from "../components/ClientContactForm/clientContactForm
 
 function Contact() {
   return (
-    <ClientContactForm />
+    <div className="Contact">
+      <ClientContactForm />
+    </div>
   );
 }
 
