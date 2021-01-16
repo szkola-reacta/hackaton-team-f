@@ -117,6 +117,10 @@
           align-items: center;
 }
 
+.Admin__back {
+  margin-top: 5px !important;
+}
+
 .Admin__bookingTable {
   width: 90vw !important;
 }

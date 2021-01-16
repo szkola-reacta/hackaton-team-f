@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { withStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
@@ -8,7 +9,8 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import { Button, TextField } from "@material-ui/core";
+import { Button, IconButton, TextField } from "@material-ui/core";
+import ArrowBackRoundedIcon from "@material-ui/icons/ArrowBackRounded";
 import Modal from "react-modal";
 import api from "../api";
 
@@ -34,6 +36,7 @@ const properData = {
 };
 
 function Admin() {
+  const history = useHistory();
   const [isModalActive, setIsModalActive] = useState(true);
   const [table, setTable] = useState(false);
   const [bookings, setBookings] = useState([]);
@@ -71,6 +74,9 @@ function Admin() {
     const { target: { name, value }} = e;
     { name === "login" ? setLogin(value) : setPassword(value); }
   };
+  const handleBack = () => {
+    history.goBack();
+  };
   const { handleSubmit } = useForm();
   const onSubmit = () => {
     if((login === properData.login) && (password === properData.password)) {
@@ -99,6 +105,9 @@ function Admin() {
           <Button type="submit" variant="outlined" color="default">
             Zaloguj się
           </Button>
+          <IconButton className="Admin__back" color="default" aria-label="back" component="span" onClick={handleBack}>
+          <ArrowBackRoundedIcon />
+        </IconButton>
         </form>
       </Modal>
       <div className="Admin">
