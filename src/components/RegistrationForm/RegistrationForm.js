@@ -49,7 +49,7 @@ function RegistrationForm() {
         variant="outlined"
         color="default"
       >
-        Registration
+        Sign up
       </Button>
     </form>
   );

@@ -1,10 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AACA,AAAA,EAAE,CAAC;EACD,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,YAAY;CAQ9B;;AAXD,AAIE,EAJA,CAIA,EAAE,CAAC;EACD,eAAe,EAAE,IAAI;CAItB;;AATH,AAMI,EANF,CAIA,EAAE,CAEA,CAAC,CAAC;EACA,KAAK,EAAE,KAAK;CACb;;AAIL,AAAA,UAAU,CAAA;EACR,KAAK,EAAC,IAAI;CACX;;AACD,AAAA,oBAAoB,CAAA;EAClB,UAAU,ECXU,oBAAkB,CDWL,UAAU;CAC5C",
-    "sources": [
-        "style.scss",
-        "../../variables.scss"
-    ],
-    "names": [],
-    "file": "style.css"
-}
+{"version":3,"sources":["style.scss"],"names":[],"mappings":"AAAA;EACE,oBAAa;EAAb,oBAAa;EAAb,aAAa;EACb,4BAAsB;EAAtB,6BAAsB;MAAtB,0BAAsB;UAAtB,sBAAsB;EACtB,8BAA6B;MAA7B,2BAA6B;UAA7B,6BAA6B;AAC/B;AACA;EACE,qBAAqB;AACvB;AACA;EACE,YAAY;AACd;;AAEA;EACE,WAAW;AACb;;AAEA;EACE,2CAA2C;AAC7C","file":"style.css","sourcesContent":["ul {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-evenly;\n}\nul li {\n  list-style-type: none;\n}\nul li a {\n  color: unset;\n}\n\n.mainImage {\n  width: 50vw;\n}\n\n.ReactModal__Content {\n  background: rgba(8, 76, 97, 0.5) !important;\n}\n\n/*# sourceMappingURL=file:///Users/oleksiimarchenko/Documents/Szkola_Reacta/hackaton-21.11/hackaton-team-f/src/components/OfferList/style.css.map */"]}

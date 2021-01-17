@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,MAAM,CAAC;EACL,OAAO,EAAE,IAAI;CAWd;;AAZD,AAEE,MAFI,AAEH,OAAO,CAAC;EACP,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,OAAO,EAAE,IAAI;EACb,MAAM,EAAE,cAAc;EACtB,UAAU,EAAE,wBAAsB;EAClC,aAAa,EAAE,GAAG;EAClB,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;CACpB;;AAEH,AAAA,QAAQ,CAAC;EACP,MAAM,EAAE,CAAC;CACV;;AACD,AAAA,OAAO,CAAC;EACN,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,MAAM,EAAE,CAAC;EACT,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,WAAW,EAAE,IAAI;EACjB,UAAU,EAAE,IAAI;EAChB,SAAS,EAAE,IAAI;CAKhB;;AAdD,AAUE,OAVK,AAUJ,MAAM,CAAC;EACN,UAAU,EAAE,uBAAuB;EACnC,KAAK,EAAE,IAAI;CACZ",
-    "sources": [
-        "Alert.module.scss"
-    ],
-    "names": [],
-    "file": "Alert.module.css"
-}
+{"version":3,"sources":["Alert.module.scss"],"names":[],"mappings":"AAAA;EACE,aAAa;AACf;AACA;EACE,oBAAa;EAAb,oBAAa;EAAb,aAAa;EACb,8BAAmB;EAAnB,6BAAmB;MAAnB,uBAAmB;UAAnB,mBAAmB;EACnB,aAAa;EACb,sBAAsB;EACtB,oCAAoC;EACpC,kBAAkB;EAClB,yBAA8B;MAA9B,sBAA8B;UAA9B,8BAA8B;EAC9B,yBAAmB;MAAnB,sBAAmB;UAAnB,mBAAmB;AACrB;;AAEA;EACE,SAAS;AACX;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,SAAS;EACT,kBAAkB;EAClB,UAAU;EACV,SAAS;EACT,iBAAiB;EACjB,gBAAgB;EAChB,eAAe;AACjB;AACA;EACE,mCAAmC;EACnC,WAAW;AACb","file":"Alert.module.css","sourcesContent":[".alert {\n  display: none;\n}\n.alert.active {\n  display: flex;\n  flex-direction: row;\n  padding: 15px;\n  border: 1px solid #fff;\n  background: rgba(255, 255, 255, 0.6);\n  border-radius: 8px;\n  justify-content: space-between;\n  align-items: center;\n}\n\n.message {\n  margin: 0;\n}\n\n.button {\n  width: 30px;\n  height: 30px;\n  border: 0;\n  border-radius: 6px;\n  padding: 0;\n  margin: 0;\n  line-height: 30px;\n  background: #fff;\n  font-size: 16px;\n}\n.button:hover {\n  background: rgba(13, 101, 141, 0.2);\n  color: #fff;\n}\n\n/*# sourceMappingURL=file:///Users/oleksiimarchenko/Documents/Szkola_Reacta/hackaton-21.11/hackaton-team-f/src/components/Alert/Alert.module.css.map */"]}
