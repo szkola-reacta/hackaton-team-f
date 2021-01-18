@@ -38,7 +38,7 @@ function ClientContactForm() {
           onChange={handlePhoneChange}
         
         />
-        <TextField required id="standard-required" label="Email" onChange={handleEmailChange} pattern="[A-Za-z]{2,99}" />
+        <TextField required id="standard-required" label="Email" onChange={handleEmailChange} type="email" />
         <TextField
           id="standard-multiline-flexible"
           label="Your message"

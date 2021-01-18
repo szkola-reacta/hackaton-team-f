@@ -129,8 +129,8 @@
     //wyśrodkować
   }
 }
-/* ----REGISTRATION PANEL--- */
-.Registration {
+/* ----REGISTRATION/LOGIN PANEL--- */
+.Registration,.Login {
   height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;

@@ -1,13 +1,11 @@
 @font-face {
-  font-family: 'Aquafina';
+  font-family: "Aquafina";
   src: url("./aguafina-script/AguafinaScript-Regular.ttf") format("truetype");
 }
-
 .App {
   text-align: center;
   position: relative;
 }
-
 .App .background {
   position: fixed;
   width: 100vw;
@@ -66,13 +64,11 @@
       -ms-flex-align: center;
           align-items: center;
 }
-
 .App-menu__item a {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   font-weight: 200;
 }
-
 .App-menu__item a:hover, .App-menu__item a.active {
   color: #177e89;
 }
@@ -86,7 +82,6 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-
 .homepage .go {
   width: 10vw;
   height: 7vh;
@@ -98,7 +93,6 @@
   font-size: 1.2em;
   font-weight: 900;
 }
-
 .homepage .go:hover {
   background: white;
   color: #177e89;
@@ -126,11 +120,9 @@
       -ms-flex-align: center;
           align-items: center;
 }
-
 .Admin__back {
   margin-top: 5px !important;
 }
-
 .Admin__bookingTable {
   width: 90vw !important;
 }
@@ -155,12 +147,10 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
-
 .Admin__ComponentModal {
   width: 50vw;
   height: 50vh;
 }
-
 .Admin__ComponentModal form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -177,12 +167,10 @@
           justify-content: center;
   height: 100%;
 }
-
 .Admin__ComponentModal form > div {
   width: 50%;
 }
-
-.Admin__ComponentModal form button[type="submit"] {
+.Admin__ComponentModal form button[type=submit] {
   margin-top: 15px;
 }
 
@@ -203,11 +191,9 @@
           align-items: center;
   height: calc(100vh - 100px);
 }
-
 .Contact__contactForm {
   width: 50vw;
 }
-
 .Contact__contactForm > div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -219,8 +205,8 @@
   padding: 10px 0;
 }
 
-/* ----REGISTRATION PANEL--- */
-.Registration {
+/* ----REGISTRATION/LOGIN PANEL--- */
+.Registration, .Login {
   height: calc(100vh - 100px);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -236,12 +222,10 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
-
-.Registration div {
+.Registration div, .Login div {
   width: 50vw;
 }
-
-.Registration button[type="submit"] {
+.Registration button[type=submit], .Login button[type=submit] {
   margin-top: 15px;
 }
 /*# sourceMappingURL=App.css.map */

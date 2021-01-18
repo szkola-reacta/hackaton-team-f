@@ -1,7 +1,6 @@
 .alert {
   display: none;
 }
-
 .alert.active {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -37,7 +36,6 @@
   background: #fff;
   font-size: 16px;
 }
-
 .button:hover {
   background: rgba(13, 101, 141, 0.2);
   color: #fff;
