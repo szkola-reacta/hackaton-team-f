@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button, TextField } from "@material-ui/core";
+import { BrowserRouter, NavLink } from "react-router-dom";
 import api from "../../api";
 function LoginForm() {
   const element = "users";
@@ -23,7 +24,9 @@ function LoginForm() {
         (user.accountName === login && user.password === password)
     );
      console.log(currentUser);
-     currentUser?<h1>ok</h1>:(reset());
+     // eslint-disable-next-line no-unused-expressions
+     currentUser ?null :
+     (reset());
   };
 
   useEffect(() => {
@@ -37,6 +40,7 @@ function LoginForm() {
   }, []);
 
   return (
+    <BrowserRouter>
     <form className="Login" onSubmit={handleSubmit}>
       <div>
         <TextField
@@ -66,7 +70,9 @@ function LoginForm() {
       >
         Sign in
       </Button>
+      <NavLink to="/user">User</NavLink>
     </form>
+    </BrowserRouter>
   );
 }
 
