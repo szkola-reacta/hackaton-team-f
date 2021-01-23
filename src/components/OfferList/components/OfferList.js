@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import Item from "../../item/Item";
+import "../../UI/styles.scss";
 import "../style.scss";
-
+import CircularProgress from "@material-ui/core/CircularProgress";
 export default class OfferList extends Component {
   openModal = (item) => {
     this.setState({ item });
@@ -27,8 +28,10 @@ export default class OfferList extends Component {
       });
     }
     return (
-      <div>
-        <ul> {itemsToRender}</ul>
+      <div className="OfferList">
+        { offers ? <ul> {itemsToRender}</ul> : <CircularProgress color="secondary"/>}
+    
+      
       </div>
     );
   }

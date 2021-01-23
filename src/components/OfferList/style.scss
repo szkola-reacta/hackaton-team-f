@@ -1,6 +1,12 @@
 @import '../../variables.scss';
+
+h2{
+  position: fixed; 
+}
+
 ul {
   display: flex;
+  padding: 20px 0;
   flex-direction: column;
   justify-content: space-evenly;
   li {

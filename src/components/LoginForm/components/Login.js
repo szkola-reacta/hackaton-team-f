@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Button, TextField } from "@material-ui/core";
-import api from "../../api";
-function LoginForm({ Login }) {
+
+function Login({ realUsers, LogIn }) {
   const [details, setDetails] = useState({ email: "", password: "" });
   const [error, setError] = useState(false);
-  const element = "users";
   const [users, setUsers] = useState([]);
   const handleChange = (e) => {
     setDetails({ ...details, [e.target.name]: e.target.value });
@@ -12,6 +11,7 @@ function LoginForm({ Login }) {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+
     const currentUser = users.find(
       (user) =>
         (user.email === details.email && user.password === details.password) ||
@@ -19,21 +19,16 @@ function LoginForm({ Login }) {
           user.password === details.password)
     );
     if(currentUser) {
-      Login(currentUser);
+      LogIn(currentUser);
+      localStorage.setItem("userState", true);
     } else {
       setError(true);
     }
   };
 
   useEffect(() => {
-    let mounted = true;
-    api.get(`${element}`).then((items) => {
-      if(mounted) {
-        setUsers(items);
-      }
-    });
-    return () => (mounted = false);
-  }, []);
+    setUsers(realUsers);
+  }, [users]);
 
   return (
     <form className="Login" onSubmit={handleSubmit}>
@@ -68,4 +63,4 @@ function LoginForm({ Login }) {
   );
 }
 
-export default LoginForm;
+export default Login;

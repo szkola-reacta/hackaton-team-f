@@ -1,7 +1,9 @@
 .container {
-  display: block;
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
   max-width: 1320px;
+  height: calc(100vh - 70px);
   @media (max-width: 575px) {
     max-width: auto;
   }

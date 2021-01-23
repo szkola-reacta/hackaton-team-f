@@ -12,7 +12,7 @@ import Contact from "./pages/Contact";
 import Homepage from "./pages/Homepage";
 import Booking from "./pages/Booking";
 import Admin from "./pages/Admin";
-import Login from "./pages/Login";
+import User from "./pages/User";
 import Offers from "./components/OfferList/containers/Offers";
 import Registration from "./pages/Registration";
 import Page404 from "./pages/404";
@@ -131,10 +131,10 @@ class App extends Component {
                   component={Search}
                 />
                 <Route path="/booking/:slug" component={Booking} />
-                <Route path="/login" component={() => (
+                {/* <Route path="/login" component={() => (
                     <Login SignIn={this.SignIn} />
-                  )}/>
-                <Route path="/login" component={Login} />
+                  )}/> */}
+                <Route path="/login" component={User} />
                 <Route exact
                   path="/admin"
                   component={() => (

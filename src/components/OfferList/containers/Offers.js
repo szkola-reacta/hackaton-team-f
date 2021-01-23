@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import OffersList from "../components/OfferList";
 import { fetchOffers } from "../redux";
-
+import "../style.scss";
 class Offers extends Component {
   componentDidMount() {
     this.props.fetchOffers();
