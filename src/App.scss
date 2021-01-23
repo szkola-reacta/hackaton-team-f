@@ -63,7 +63,6 @@
 .pageTitle {
   font-weight: 400;
   font-size: 5em;
-  color: $MaximumYellowRed;
   color: white;
   font-family: "Aquafina";
   padding: 20vh 20vw;
@@ -82,4 +81,38 @@
 .Admin__Modal{
   width: 30vw;
   height: 50vh;
+}
+.ligthTitle {
+  font-weight: 100;
+  font-size: 2em;
+  color: white;
+  font-family: "Aquafina";
+}
+.titleHeader {
+  padding: 15px 15px 0;
+}
+.bgMain {
+  background: $MetalicSeaweed;
+}
+.bgMainDark {
+  background: $EagleGreen;
+}
+.bgLight {
+  background: $Light;
+}
+.colorMain {
+  color: $MetalicSeaweed;
+}
+.colorMainDark {
+  color: $EagleGreen;
+}
+.colorLight {
+  color: #fff;
+}
+.box {
+  padding: 15px;
+  margin: 0;
+}
+.fade80 {
+  background: rgba(255,255,255,0.8);
 }
