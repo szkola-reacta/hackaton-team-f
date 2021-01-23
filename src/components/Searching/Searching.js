@@ -17,6 +17,7 @@ class Searching extends React.Component {
       clicked: true
     };
   }
+
  async loadData() {
    await api.get("offer")
     .then((res) => {
@@ -27,8 +28,7 @@ class Searching extends React.Component {
     await this.filterData();
   }
 
-  filterData() {
-  async loadData() {
+  async filterData() {
     const { place } = this.state.fields;
     if(place) {
       const data = await api.get(
@@ -38,7 +38,7 @@ class Searching extends React.Component {
         results: data
       });
     }
-  }
+ }
 
   componentDidMount() {
     this.loadData();
