@@ -29,7 +29,6 @@ function Login() {
      Logout
       </Button>
       </div>
-      
       ):<LoginForm Login = {Login}/>}
     </div>
 

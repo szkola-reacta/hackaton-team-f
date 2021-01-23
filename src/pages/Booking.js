@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+import CircularProgress from "@material-ui/core/CircularProgress";
 import Gallery from "../components/Galery/Gallery";
 import Page404 from "../pages/404";
 
@@ -11,11 +12,13 @@ function Booking() {
   const [data, setData] = useState([]);
   const [item, setItem] = useState({});
   const [error, setError] = useState(false);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     const loadData = async() => {
       const { data } = await axios.get("http://localhost:3001/offer");
       const result = [...data];
+      setLoader(false);
       const newResult = result.filter((b) => b.friendlyUrl === link);
       if(newResult.length === 0) {
         return setError(true);
@@ -25,6 +28,7 @@ function Booking() {
       setItem(nitem);
       setData([...media]);
     };
+    setLoader(false);
     loadData();
   }, [link]);
 
@@ -40,7 +44,13 @@ function Booking() {
       <span className="pageTitle">Booking</span>
       <div style={{ display:"flex" }}>
         <div style={{ width: "50%" }}>
-        <Gallery data={data} name={item.name} />
+          {loader ?
+          <CircularProgress disableShrink />
+          :
+          <>
+          <Gallery data={data} name={item.name} />
+          </>
+          }
         </div>
         <div style={{ width: "50%" }}>
           <h3>{item.name}</h3>
