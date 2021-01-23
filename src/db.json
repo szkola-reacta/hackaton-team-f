@@ -4,34 +4,42 @@
       "name": "Meeru Island Resort & Spa",
       "email": "info@meeru-island.com",
       "imageUrl": "/assets/images/edvin-johansson.jpg",
-      "friendlyUrl":"meeru-island-resort-and-spa",
-      "startPrice":"80",
+      "friendlyUrl": "meeru-island-resort-and-spa",
+      "startPrice": "80",
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       "media": [
-          {
-            "id": 1,
-            "type": "image",
-            "source": "/assets/images/edvin-johansson.jpg",
-            "description": "Lorem ipsum 1"
-          }
+        {
+          "id": 1,
+          "type": "image",
+          "source": "/assets/images/edvin-johansson.jpg",
+          "description": "Lorem ipsum 1"
+        }
       ],
-      "rating":"5",
+      "rating": "5",
       "address": {
         "country": "Maldives",
         "city": "Dhiffushi",
         "zip": "20187"
       },
-      "id": 1
+      "id": 1,
+      "advantages": [1,2,3,4]
     },
     {
       "name": "Sun Siyam Olhuveli",
       "email": "info@sun-siyam-olhuveli.com",
       "imageUrl": "/assets/images/paolo-nicolello.jpg",
-      "startPrice":"25",
-      "friendlyUrl":"Sun-Siyam-Olhuveli",
+      "startPrice": "25",
+      "friendlyUrl": "Sun-Siyam-Olhuveli",
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      "media": [],
-      "rating":"5",
+      "media": [
+        {
+            "id": 1,
+            "type": "image",
+            "source": "/assets/images/edvin-johansson.jpg",
+            "description": "Lorem ipsum 1"
+        }
+      ],
+      "rating": "5",
       "address": {
         "country": "Maldives",
         "city": "South Male Atoll",
@@ -40,82 +48,81 @@
       "id": 2
     },
     {
-        "name": "Moi Than Resort Hotel",
-        "email": "info@sun-siyam-olhuveli.com",
-        "imageUrl": "http://lorempixel.com/800/400/nature",
-        "startPrice":"15",
-        "friendlyUrl":"moi-than-resort-hotel",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-        "media": [
-            {
-                "id": 1,
-                "type": "image",
-                "source": "http://lorempixel.com/800/400/nature",
-                "description": "Lorem ipsum 1"
-            },
-            {
-                "id": 2,
-                "type": "image",
-                "source": "http://lorempixel.com/800/400/nature/2",
-                "description": "Lorem ipsum 2"
-            },
-            {
-                "id": 3,
-                "type": "video",
-                "source": "https://www.youtube.com/embed/tb3HXbVEnA0",
-                "description": "Lorem ipsum 3"
-            },
-            {
-                
-                "id": 4,
-                "type": "video",
-                "source": "https://www.youtube.com/embed/a8r6yHdEE28",
-                "description": "Lorem ipsum 4"
-            }
-        ],
-        "rating":"4",
-        "address": {
-          "country": "Brasil",
-          "city": "Mata Lana",
-          "zip": "22256"
+      "name": "Moi Than Resort Hotel",
+      "email": "info@sun-siyam-olhuveli.com",
+      "imageUrl": "http://lorempixel.com/800/400/nature",
+      "startPrice": "15",
+      "friendlyUrl": "moi-than-resort-hotel",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "media": [
+        {
+          "id": 1,
+          "type": "image",
+          "source": "http://lorempixel.com/800/400/nature",
+          "description": "Lorem ipsum 1"
         },
-        "id": 3
+        {
+          "id": 2,
+          "type": "image",
+          "source": "http://lorempixel.com/800/400/nature/2",
+          "description": "Lorem ipsum 2"
+        },
+        {
+          "id": 3,
+          "type": "video",
+          "source": "https://www.youtube.com/embed/tb3HXbVEnA0",
+          "description": "Lorem ipsum 3"
+        },
+        {
+          "id": 4,
+          "type": "video",
+          "source": "https://www.youtube.com/embed/a8r6yHdEE28",
+          "description": "Lorem ipsum 4"
+        }
+      ],
+      "rating": "4",
+      "address": {
+        "country": "Brasil",
+        "city": "Mata Lana",
+        "zip": "22256"
       },
-      {
-        "name": "Impact Star",
-        "email": "info@sun-siyam-olhuveli.com",
-        "imageUrl": "http://lorempixel.com/800/400/city/2",
-        "startPrice":"35",
-        "friendlyUrl":"impact-star",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-        "media": [
-            {
-                "id": 1,
-                "type": "image",
-                "source": "http://lorempixel.com/800/400/city/2",
-                "description": "Lorem ipsum 1"
-            }
-        ],
-        "rating":"5",
-        "address": {
-          "country": "Tokio",
-          "city": "Quie",
-          "zip": "3365"
-        },
-        "id": 4
-      }
+      "id": 3
+    },
+    {
+      "name": "Impact Star",
+      "email": "info@sun-siyam-olhuveli.com",
+      "imageUrl": "http://lorempixel.com/800/400/city/2",
+      "startPrice": "35",
+      "friendlyUrl": "impact-star",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "media": [
+        {
+          "id": 1,
+          "type": "image",
+          "source": "http://lorempixel.com/800/400/city/2",
+          "description": "Lorem ipsum 1"
+        }
+      ],
+      "rating": "5",
+      "address": {
+        "country": "Tokio",
+        "city": "Quie",
+        "zip": "3365"
+      },
+      "id": 4
+    }
   ],
   "bookings": [
     {
-      "bookingID":1,
+      "bookingID": 1,
       "id": 1,
       "clientID": 1001,
       "name": "Meeru Island Resort & Spa",
       "email": "info@meeru-island.com",
-      "startPrice":"80",
-      "CheckIn":"2020-06-05",
+      "startPrice": "80",
+      "CheckIn": "2020-06-05",
       "CheckOut": "2020-06-15",
-      "Nights":"5"
+      "Nights": "5"
     }
   ],
   "users": [
@@ -134,5 +141,147 @@
       "password": "qwerty",
       "id": 2
     }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "userId": 1,
+      "offerId": 1,
+      "comment": "Eiusmod ullamco velit adipisicing amet aliquip enim sit. Deserunt amet mollit voluptate labore. In eu non cillum cupidatat fugiat cillum amet. Velit veniam sunt laborum ut commodo ea ad aliqua amet dolor ea incididunt dolor do. Enim ipsum duis officia ut elit ad fugiat in tempor eu do. Adipisicing sint enim minim commodo reprehenderit esse ullamco. Reprehenderit consequat pariatur sit dolore aliqua duis ullamco ex irure ullamco dolore quis voluptate.",
+      "dateAdded": "2010-10-01",
+      "rate": 4
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "offerId": 2,
+      "comment": "Eiusmod ullamco velit adipisicing amet aliquip enim sit. Deserunt amet mollit voluptate labore. In eu non cillum cupidatat fugiat cillum amet. Velit veniam sunt laborum ut commodo ea ad aliqua amet dolor ea incididunt dolor do. Enim ipsum duis officia ut elit ad fugiat in tempor eu do. Adipisicing sint enim minim commodo reprehenderit esse ullamco. Reprehenderit consequat pariatur sit dolore aliqua duis ullamco ex irure ullamco dolore quis voluptate.",
+      "dateAdded": "2010-01-01",
+      "rate": 3
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "offerId": 1,
+      "comment": "Eiusmod ullamco velit adipisicing amet aliquip enim sit. Deserunt amet mollit voluptate labore. In eu non cillum cupidatat fugiat cillum amet. Velit veniam sunt laborum ut commodo ea ad aliqua amet dolor ea incididunt dolor do. Enim ipsum duis officia ut elit ad fugiat in tempor eu do. Adipisicing sint enim minim commodo reprehenderit esse ullamco. Reprehenderit consequat pariatur sit dolore aliqua duis ullamco ex irure ullamco dolore quis voluptate.",
+      "dateAdded": "2010-11-21",
+      "rate": 5
+    },
+    {
+      "id": 4,
+      "comment": "tekst test"
+    }
+  ],
+  "rooms": [
+    {
+      "id": 1,
+      "offerId": 1,
+      "type": "Room",
+      "persons": 2,
+      "beds": "2",
+      "active": true
+    },
+    {
+      "id": 2,
+      "offerId": 1,
+      "type": "Apartment",
+      "persons": 5,
+      "beds": "1+2+2",
+      "active": true
+    }
+  ],
+  "advantages": [
+      {
+          "id": 1,
+          "name": "Free Wi-Fi",
+          "icon": "wifi"
+      },
+      {
+        "id": 2,
+        "name": "Pool",
+        "icon": "star"
+    },
+    {
+        "id": 3,
+        "name": "Toilet",
+        "icon": "wc"
+    },
+    {
+        "id": 4,
+        "name": "Own TV",
+        "icon": "tv"
+    }
+  ],
+  "adminMenu": [
+      {
+          "id": 1,
+          "name": "Rooms",
+          "url": "rooms",
+          "icon": "king_bed",
+          "labels": [
+              {
+                  "offerId": "Offer",
+                  "type": "Room type",
+                  "persons": "Persons",
+                  "beds": "Available beds",
+                  "active": "Active"
+              }
+          ]
+      },
+      {
+          "id": 2,
+          "name": "Comments",
+          "url": "comments",
+          "icon": "star",
+          "labels": [
+              {
+                  "userId": "User",
+                  "offerId": "Offer",
+                  "comment": "User Comment",
+                  "dateAdded": "Date",
+                  "rate": "Vote"
+              }
+          ]
+      },
+      {
+          "id": 3,
+          "name": "Offers",
+          "url": "offer",
+          "icon": "house",
+          "labels": [
+              {
+                  "name": "Offer name",
+                  "email": "E-mail address",
+                  "startPrice": "Price",
+                  "rating": "Rating"
+              }
+          ]
+      },
+      {
+          "id": 4,
+          "name": "Bookings",
+          "url": "bookings",
+          "icon": "assignment",
+          "labels": [
+              {
+                  "clientID": "User",
+                  "email": "E-mail",
+                  "CheckIn": "Check in",
+                  "CheckOut": "Check out",
+                  "startPrice": "Price"
+              }
+          ]
+      },
+      {
+          "id": 5,
+          "name": "Users",
+          "url": "users",
+          "icon": "wc",
+          "labels": [
+              {
+                  "email":"E-mail address"
+              }
+          ]
+      }
   ]
 }

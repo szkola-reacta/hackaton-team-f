@@ -1,0 +1,33 @@
+.container {
+  display: block;
+  margin: 0 auto;
+  max-width: 1320px;
+  @media (max-width: 575px) {
+    max-width: auto;
+  }
+  @media (max-width: 767px) {
+    max-width: 540px;
+  }
+  @media (max-width: 991px) {
+    max-width: 720px;
+  }
+  @media (max-width: 1199px) {
+    max-width: 960;
+  }
+  @media (max-width: 1399px) {
+    max-width: 1140;
+  }
+}
+
+.container-fluid {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.w100 {
+  width: 100%;
+}

@@ -1,0 +1,30 @@
+@import "../../variables.scss";
+.admin-menu {
+  display: flex;
+  flex-direction: column;
+}
+.admin-menu__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: $EagleGreen-50percent;
+  color: #fff;
+  font-size: 12px;
+  &:hover {
+    background: $EagleGreen;
+    color: #fff;
+    font-weight: 700;
+  }
+  &--active {
+    background: #fff;
+    color: $EagleGreen;
+  }
+}
+.tableRow {
+  &:hover {
+    background: $EagleGreen-50percent;
+  }
+}
