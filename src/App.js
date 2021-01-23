@@ -126,7 +126,7 @@ class App extends Component {
                 />
                 <Route path="/booking/:slug" component={Booking} />
                 <Route path="/login" component={Login} />
-                <Route
+                <Route exact
                   path="/admin"
                   component={() => (
                     <Admin
