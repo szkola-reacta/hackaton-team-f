@@ -26,7 +26,6 @@ class Searching extends React.Component {
         data: res
       });
     });
-    console.log(this.state.data);
     await this.filterData();
   }
 

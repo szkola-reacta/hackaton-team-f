@@ -1,19 +1,9 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import Item from "../../item/Item";
-import { Zoom, Fade } from "react-reveal";
-import Modal from "react-modal";
-import ItemModal from "../../ItemModal/ItemModal";
 import "../style.css";
 
 export default class OfferList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      offers: null,
-    };
-  }
-
   openModal = (item) => {
     this.setState({ item });
   };
@@ -23,35 +13,23 @@ export default class OfferList extends Component {
   };
 
   render() {
-    const { data } = this.props;
-    const { item } = this.state;
+    const { offers } = this.props;
     let itemsToRender;
-    if(data) {
-      itemsToRender = data.map((item) => {
+    if(offers) {
+      itemsToRender = offers.map((offer) => {
         return (
-          <li key={item.id}>
-            <NavLink
-              to={`/booking/${item.friendlyUrl}`}
-            >
-              <Item id={item.id} data={item} />
+          <li key={offer.id}>
+            <NavLink to={`/booking/${offer.friendlyUrl}`}>
+              <Item id={offer.id} data={offer} />
             </NavLink>
           </li>
         );
       });
     }
     return (
-      <Fade bottom>
       <div>
         <ul> {itemsToRender}</ul>
-        {item && (
-          <Modal isOpen={true} onRequestClose={this.closeModal} ariaHideApp={false}>
-            <Zoom>
-              <ItemModal className="modal" item={item} closeModal={this.closeModal} />
-            </Zoom>
-          </Modal>
-        )}
       </div>
-      </Fade>
     );
   }
 }
