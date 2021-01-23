@@ -3,7 +3,7 @@ import { FormControl, TextField, Button } from "@material-ui/core";
 import styles from "./Searching.module.scss";
 import { withRouter } from "react-router-dom";
 import api from "../../api";
-import OfferList from "../OfferList/OfferList";
+import OfferList from "../OfferList/components/OfferList";
 import Alert from "../Alert/Alert";
 
 class Searching extends React.Component {
@@ -17,7 +17,17 @@ class Searching extends React.Component {
       clicked: true
     };
   }
+ async loadData() {
+   await api.get("offer")
+    .then((res) => {
+      this.setState({
+        data: res
+      });
+    });
+    await this.filterData();
+  }
 
+  filterData() {
   async loadData() {
     const { place } = this.state.fields;
     if(place) {

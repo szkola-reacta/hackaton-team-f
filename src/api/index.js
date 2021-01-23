@@ -13,7 +13,6 @@ function request(endpoint, method = "GET", data = null) {
   }
   const url = `${API_URL}/${endpoint}`;
   return fetch(url, config).then((response) => {
-    console.log(response);
     return response.json();
   });
 }

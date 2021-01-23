@@ -3,7 +3,6 @@ import LoginForm from "../components/LoginForm/LoginForm";
 import { Button } from "@material-ui/core";
 function Login() {
   const Login = details => {
-    console.log(details);
     setUser({
       email: details.email,
       password: details.password

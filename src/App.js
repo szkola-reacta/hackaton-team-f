@@ -1,4 +1,10 @@
 import React, { Component } from "react";
+import { createStore, applyMiddleware, compose } from "redux";
+import { Provider } from "react-redux";
+import rootReducer from "./rootReducer";
+import thunk from "redux-thunk";
+import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
+import "./App.css";
 import {
   BrowserRouter,
   Switch,
@@ -14,12 +20,19 @@ import Homepage from "./pages/Homepage";
 import Booking from "./pages/Booking";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
-import OfferList from "./components/OfferList/OfferList";
+import Offers from "./components/OfferList/containers/Offers";
 import Registration from "./pages/Registration";
 import Page404 from "./pages/404";
 import Dashboard from "./pages/admin/Dashboard";
 import { IconButton, Menu, MenuItem } from "@material-ui/core";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const middleware = [thunk];
+const store = createStore(rootReducer, /* preloadedState, */ composeEnhancers(
+  applyMiddleware(...middleware)
+));
+
 
 class App extends Component {
   constructor() {
@@ -27,7 +40,7 @@ class App extends Component {
     this.state = {
       offer: null,
       bookings: null,
-      anchorEl: null
+      anchorEl: null,
     };
     this.loadBookings = this.loadBookings.bind(this);
   }
@@ -58,20 +71,21 @@ class App extends Component {
   render() {
     const handleClick = (event) => {
       this.setState({
-        anchorEl:event.currentTarget
+        anchorEl: event.currentTarget,
       });
     };
-  
+
     const handleClose = () => {
       this.setState({
-        anchorEl:null
+        anchorEl: null,
       });
     };
-    const { offer, bookings, anchorEl } = this.state;
+    const { bookings, anchorEl } = this.state;
     return (
       <div>
         <BrowserRouter>
-          <div className="App">
+        <Provider store = {store}>
+        <div className="App">
             <div className="background"></div>
             <header className="App-header">
               <ul className="App-menu">
@@ -93,7 +107,7 @@ class App extends Component {
                     aria-haspopup="true"
                     onClick={handleClick}
                   >
-                   <AccountCircleIcon/>
+                    <AccountCircleIcon />
                   </IconButton>
                   <Menu
                     id="client-menu"
@@ -103,10 +117,10 @@ class App extends Component {
                     onClose={handleClose}
                   >
                     <MenuItem onClick={handleClose}>
-                    <NavLink to="/login">Sign in</NavLink>
+                      <NavLink to="/login">Sign in</NavLink>
                     </MenuItem>
                     <MenuItem onClick={handleClose}>
-                    <NavLink to="/registration">Sign up</NavLink>
+                      <NavLink to="/registration">Sign up</NavLink>
                     </MenuItem>
                   </Menu>
                 </li>
@@ -117,14 +131,17 @@ class App extends Component {
                 <Route exact path={["/dashboard", "/"]} component={Homepage} />
                 <Route
                   path="/offer"
-                  component={() => <OfferList data={offer} />}
-                />
+                  component={ Offers } />
                 <Route path="/contact" component={Contact} />
                 <Route
                   path={["/search/:query", "/search"]}
                   component={Search}
                 />
                 <Route path="/booking/:slug" component={Booking} />
+                <Route path="/login" component={() => (
+                    <Login SignIn={this.SignIn} />
+                  )}/>
+                <Route
                 <Route path="/login" component={Login} />
                 <Route exact
                   path="/admin"
@@ -144,7 +161,9 @@ class App extends Component {
               </Switch>
             </div>
           </div>
-        </BrowserRouter>
+        
+        </Provider>
+       </BrowserRouter>
       </div>
     );
   }
