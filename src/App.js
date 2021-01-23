@@ -4,7 +4,6 @@ import { Provider } from "react-redux";
 import rootReducer from "./rootReducer";
 import thunk from "redux-thunk";
 import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
-import "./App.css";
 import PrivateRoute from "./utils/PrivateRoute";
 import "./App.scss";
 import api from "./api";

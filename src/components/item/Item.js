@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import StarRatingComponent from "react-star-rating-component";
 import { formatCurrency, truncate } from "../../utils";
-import "./style.css";
+import "./style.scss";
 
 export default class Item extends Component {
   render() {

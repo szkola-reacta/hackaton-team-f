@@ -3,7 +3,7 @@ import StarRatingComponent from "react-star-rating-component";
 import { formatCurrency } from "../../utils";
 import RoomIcon from "@material-ui/icons/Room";
 import Gallery from "../Galery/Gallery";
-import "./style.css";
+import "./style.scss";
 
 export default class ItemModal extends Component {
   render() {

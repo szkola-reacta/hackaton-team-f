@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import Item from "../../item/Item";
-import "../style.css";
+import "../style.scss";
 
 export default class OfferList extends Component {
   openModal = (item) => {
