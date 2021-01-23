@@ -5,7 +5,8 @@ import {
   Route,
   NavLink
 } from "react-router-dom";
-import "./App.css";
+import PrivateRoute from "./utils/PrivateRoute";
+import "./App.scss";
 import api from "./api";
 import Search from "./pages/Search";
 import Contact from "./pages/Contact";
@@ -15,6 +16,7 @@ import Admin from "./pages/Admin";
 import OfferList from "./components/OfferList/OfferList";
 import Registration from "./pages/Registration";
 import Page404 from "./pages/404";
+import Dashboard from "./pages/admin/Dashboard";
 
 class App extends Component {
   constructor() {
@@ -86,7 +88,7 @@ class App extends Component {
                 <Route path="/contact" component={Contact} />
                 <Route path={["/search/:query", "/search"]} component={Search} />
                 <Route path="/booking/:slug" component={Booking} />
-                <Route
+                <Route exact
                   path="/admin"
                   component={() => (
                     <Admin
@@ -95,7 +97,11 @@ class App extends Component {
                     />
                   )}
                 />
+                <PrivateRoute exact path="/admin/dashboard" component={Dashboard}/>
+                <PrivateRoute exact path="/admin/:section" component={Dashboard}/>
+                <PrivateRoute exact path="/admin/:section/:id" component={Dashboard}/>
                 <Route path="/registration" component={Registration}/>
+                <PrivateRoute path="/private" component={Registration}/>
                 <Route path="*" component={Page404} />
               </Switch>
             </div>
