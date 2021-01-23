@@ -13,33 +13,21 @@ class Searching extends React.Component {
       fields: {
         place: this.props.match.params.query
       },
-      data: [],
       results: null,
       clicked: true
     };
   }
 
- async loadData() {
-   await api.get("offer")
-    .then((res) => {
-      this.setState({
-        data: res
-      });
-    });
-    console.log(this.state.data);
-    await this.filterData();
-  }
-
-  filterData() {
+  async loadData() {
     const { place } = this.state.fields;
     if(place) {
-    const newData = this.state.data.filter(item => (
-      item.address.country.toLowerCase().includes(place.toLowerCase()) ||
-      item.name.toLowerCase().includes(place.toLowerCase())));
-    this.setState({
-      results: newData
-    });
-  }
+      const data = await api.get(
+        `offer/?q=${place.toLowerCase()}`
+      );
+      this.setState({
+        results: data
+      });
+    }
   }
 
   componentDidMount() {
@@ -60,7 +48,7 @@ class Searching extends React.Component {
       clicked: !this.state.clicked
     });
     this.props.history.push("/search/"+place);
-    this.filterData();
+    this.loadData();
   }
 
   getResults(results) {

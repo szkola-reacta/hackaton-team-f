@@ -1,6 +1,12 @@
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
-import "./App.css";
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  NavLink
+} from "react-router-dom";
+import PrivateRoute from "./utils/PrivateRoute";
+import "./App.scss";
 import api from "./api";
 import Search from "./pages/Search";
 import Contact from "./pages/Contact";
@@ -11,8 +17,10 @@ import Login from "./pages/Login";
 import OfferList from "./components/OfferList/OfferList";
 import Registration from "./pages/Registration";
 import Page404 from "./pages/404";
+import Dashboard from "./pages/admin/Dashboard";
 import { IconButton, Menu, MenuItem } from "@material-ui/core";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+
 class App extends Component {
   constructor() {
     super();
@@ -127,6 +135,10 @@ class App extends Component {
                     />
                   )}
                 />
+                <PrivateRoute exact path="/admin/dashboard" component={Dashboard}/>
+                <PrivateRoute exact path="/admin/:section" component={Dashboard}/>
+                <PrivateRoute exact path="/admin/:section/:id" component={Dashboard}/>
+                <PrivateRoute path="/private" component={Registration}/>
                 <Route path="/registration" component={Registration} />
                 <Route path="*" component={Page404} />
               </Switch>
