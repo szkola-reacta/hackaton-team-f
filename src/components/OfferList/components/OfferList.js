@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import Item from "../item/Item";
+import Item from "../../item/Item";
 import { Zoom, Fade } from "react-reveal";
 import Modal from "react-modal";
-import ItemModal from "../ItemModal/ItemModal";
-import "./style.css";
+import ItemModal from "../../ItemModal/ItemModal";
+import "../style.css";
 
 export default class OfferList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      item: null,
+      offers: null,
     };
   }
 
