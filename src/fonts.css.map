@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,UAAU;EACN,WAAW,EAAE,UAAU;EACvB,GAAG,EAAE,mDAAmD,CAAE,kBAAkB",
-    "sources": [
-        "fonts.scss"
-    ],
-    "names": [],
-    "file": "fonts.css"
-}
+{"version":3,"sources":["fonts.scss"],"names":[],"mappings":"AAAA;EACE,uBAAuB;EACvB,2EAA2E;AAC7E","file":"fonts.css","sourcesContent":["@font-face {\n  font-family: \"Aquafina\";\n  src: url(\"./aguafina-script/AguafinaScript-Regular.ttf\") format(\"truetype\");\n}\n\n/*# sourceMappingURL=file:///Users/oleksiimarchenko/Documents/Szkola_Reacta/hackaton-21.11/hackaton-team-f/src/fonts.css.map */"]}

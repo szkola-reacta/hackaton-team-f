@@ -127,9 +127,19 @@
   ],
   "users": [
     {
+      "name": "Oleksii",
+      "surname": "Marchenko",
       "email": "marchenkoolexiy@gmail.com",
       "password": "12234",
+      "accountName": "OleksiiMarchenko",
+      "address": "Wrocław,ul.Jemiołowa 17a, 53-447",
+      "number": "+48-884-059-596",
       "id": 1
+    },
+    {
+      "email": "dorota@gmail.com",
+      "password": "qwerty",
+      "id": 2
     }
   ],
   "comments": [

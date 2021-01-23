@@ -9,7 +9,6 @@
   position: relative;
   padding: 3vh 3vw;
 }
-
 .item__close {
   position: fixed;
   top: 6vh;
@@ -24,35 +23,29 @@
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-
 .item__close:hover {
   background: #db3a34;
   color: white;
   border: 1px solid #db3a34;
 }
-
 .item__image {
   border-radius: 15px;
   width: 40vw;
 }
-
 .item__title {
   color: #db3a34;
   font-size: 2em;
 }
-
 .item__price {
   color: #323031;
   text-transform: uppercase;
   color: white;
 }
-
 .item__description {
   width: 70vw;
   font-size: 1.1em;
   color: white;
 }
-
 .item__address {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -62,11 +55,9 @@
           align-items: center;
   padding: 1vh 0;
 }
-
 .item__address--icon, .item__address--url {
   color: white;
 }
-
 .item__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -76,7 +67,6 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-
 .item__buttons a {
   background: #f6a80a;
   width: 150px;
@@ -95,7 +85,6 @@
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-
 .item__buttons a:hover {
   background: #084c61;
 }

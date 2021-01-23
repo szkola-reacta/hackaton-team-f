@@ -10,11 +10,9 @@ ul {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 }
-
 ul li {
   list-style-type: none;
 }
-
 ul li a {
   color: unset;
 }
