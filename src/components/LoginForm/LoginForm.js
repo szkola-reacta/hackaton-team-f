@@ -1,39 +1,48 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../../utils/createSlice";
 import { Button, TextField } from "@material-ui/core";
-import api from "../../api";
-function LoginForm({ Login }) {
+// import api from "../../api";
+function LoginForm() {
   const [details, setDetails] = useState({ email: "", password: "" });
   const [error, setError] = useState(false);
-  const element = "users";
-  const [users, setUsers] = useState([]);
+  // const element = "users";
+  // const [users, setUsers] = useState([]);
   const handleChange = (e) => {
     setDetails({ ...details, [e.target.name]: e.target.value });
     setError(false);
   };
+  const dispatch = useDispatch();
   const handleSubmit = (event) => {
     event.preventDefault();
-    const currentUser = users.find(
-      (user) =>
-        (user.email === details.email && user.password === details.password) ||
-        (user.accountName === details.email &&
-          user.password === details.password)
-    );
-    if(currentUser) {
-      Login(currentUser);
-    } else {
-      setError(true);
-    }
+    dispatch(login({
+      email: details.email,
+      password:details.password,
+      loggedIn:true
+    }));
+
+    // const currentUser = users.find(
+    //   (user) =>
+    //     (user.email === details.email && user.password === details.password) ||
+    //     (user.accountName === details.email &&
+    //       user.password === details.password)
+    // );
+    // if(currentUser) {
+    //   Login(currentUser);
+    // } else {
+    //   setError(true);
+    // }
   };
 
-  useEffect(() => {
-    let mounted = true;
-    api.get(`${element}`).then((items) => {
-      if(mounted) {
-        setUsers(items);
-      }
-    });
-    return () => (mounted = false);
-  }, []);
+  // useEffect(() => {
+  //   let mounted = true;
+  //   api.get(`${element}`).then((items) => {
+  //     if(mounted) {
+  //       setUsers(items);
+  //     }
+  //   });
+  //   return () => (mounted = false);
+  // }, []);
 
   return (
     <form className="Login" onSubmit={handleSubmit}>
