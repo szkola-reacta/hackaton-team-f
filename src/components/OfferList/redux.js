@@ -1,4 +1,3 @@
-/* eslint-disable import/no-anonymous-default-export */
 import api from "../../api";
 
 const FETCH_OFFERS_REQUESTED = "posts/FETCH_OFFERS_REQUESTED";

@@ -4,7 +4,6 @@ import api from "../../api";
 function Benefit() {
   const handleSubmit = (e, data) => {
     e.preventDefault();
-    console.log(e.target.test.value, data);
     const ndata = {
       id: 4,
       comment: e.target.test.value

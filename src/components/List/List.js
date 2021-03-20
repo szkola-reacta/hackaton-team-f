@@ -1,6 +1,5 @@
 import React from "react";
 import clsx from "clsx";
-import "./styles.scss";
 import { Grid } from "@material-ui/core";
 
 function List({ component: Component, data, className, column }) {
@@ -18,7 +17,6 @@ function List({ component: Component, data, className, column }) {
                 ))
               }
             </li>
-          
       ))}
     </Grid>
   );

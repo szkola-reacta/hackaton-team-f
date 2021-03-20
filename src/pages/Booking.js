@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import api from "../api";
-import Gallery from "../components/Galery/Gallery";
+import Gallery from "../components/Galery";
 import Page404 from "../pages/404";
 import { Comment } from "../components/Comments";
 import Room from "../components/Room";

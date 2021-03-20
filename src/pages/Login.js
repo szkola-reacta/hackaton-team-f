@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import LoginForm from "../components/LoginForm/LoginForm";
+import LoginForm from "../components/LoginForm";
 import { Button } from "@material-ui/core";
 function Login() {
   const Login = details => {

@@ -31,8 +31,8 @@ function _delete(endpoint) {
 }
 
 export default {
-    get,
-    post,
-    patch,
-    delete:_delete
+  get,
+  post,
+  patch,
+  delete: _delete,
 };

@@ -4,7 +4,7 @@ import styles from "./Searching.module.scss";
 import { withRouter } from "react-router-dom";
 import api from "../../api";
 import OfferList from "../OfferList/components/OfferList";
-import Alert from "../Alert/Alert";
+import Alert from "../Alert";
 
 class Searching extends React.Component {
   constructor(props) {
