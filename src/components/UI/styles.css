@@ -1,0 +1,50 @@
+.container {
+  display: block;
+  margin: 0 auto;
+  max-width: 1320px;
+}
+@media (max-width: 575px) {
+  .container {
+    max-width: auto;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (max-width: 991px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (max-width: 1199px) {
+  .container {
+    max-width: 960;
+  }
+}
+@media (max-width: 1399px) {
+  .container {
+    max-width: 1140;
+  }
+}
+
+.container-fluid {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.w100 {
+  width: 100%;
+}/*# sourceMappingURL=styles.css.map */

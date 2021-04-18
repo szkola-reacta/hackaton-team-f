@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3001";
+const API_URL = "http://localhost:3003";
 
 function request(endpoint, method = "GET", data = null) {
   const config = {

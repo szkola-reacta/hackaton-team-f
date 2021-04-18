@@ -1,0 +1,41 @@
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 30px auto;
+  width: 50%;
+}
+
+.input {
+  margin: 0 30px !important;
+  width: 50%;
+}
+
+.btn {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-weight: 900;
+}
+.btn:hover {
+  background: white !important;
+  color: #177E89;
+}
+
+@media (max-width: 524px) {
+  .form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}/*# sourceMappingURL=Searching.module.css.map */
